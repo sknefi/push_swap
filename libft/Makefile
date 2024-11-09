@@ -16,6 +16,7 @@ LIBFT_SRC 	= ft_memset ft_bzero ft_memcpy ft_memmove ft_memchr ft_memcmp \
 			  ft_printf/ft_print_formats/ft_print_string \
 			  get_next_line/get_next_line_bonus \
 			  get_next_line/get_next_line_utils_bonus \
+			  ft_error \
 
 SRCS 		= $(addsuffix .c, $(LIBFT_SRC))
 OBJS 		= $(SRCS:.c=.o)
