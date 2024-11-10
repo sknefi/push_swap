@@ -1,6 +1,6 @@
 #include "../src/libraries.h"
 
-static void	update_indexes(Node *node)
+static void	inkrement_indexes(Node *node)
 {
 	node->index++;
 }
@@ -10,7 +10,7 @@ t_dll	*dll_prepend(t_dll *dll, Node *new_node)
 {
 	if (!dll || !new_node)
 		return (NULL);
-	dll_iteri(dll, update_indexes);
+	dll_iteri(dll, inkrement_indexes);
 	if (!dll->head)
 	{
 		dll->head = new_node;
