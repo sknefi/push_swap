@@ -12,7 +12,15 @@ typedef struct Node
 	int				index;
 	struct Node		*next;
 	struct Node		*prev;
+	struct Node		*target_node; // toto mozno musim ostranit ak sa rozhodne pre t_target_nodes
 } Node;
+
+// 
+typedef struct target_nodes
+{
+	Node	*from_a;
+	Node	*to_b;
+} t_target_nodes;
 
 // stack a, stack b
 typedef struct dll
