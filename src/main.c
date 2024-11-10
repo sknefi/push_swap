@@ -35,5 +35,6 @@ void my_func(void)
 int	main()
 {
 	//my_func();
+	printf("%d\n", 0 % 5);
 	return 0;
 }

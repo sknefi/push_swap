@@ -7,6 +7,9 @@ static void	dekrement_indexes(Node *node)
 
 // unlink top node from src = $unlinked_node
 // set $unlinked_node next and prev to NULL
+// set new head and tail of dll
+// dekrement size
+// dekrement all indexes
 static Node	*unlink_first_node(t_dll *dll)
 {
 	Node 	*first_node;

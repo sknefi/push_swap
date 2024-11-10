@@ -9,6 +9,7 @@ void static	swap_indexes(Node *x, Node *y)
 	y->index = temp;
 }
 
+// swap first two nodes
 void	swap(t_dll *dll)
 {
 	Node	*temp1;
