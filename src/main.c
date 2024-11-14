@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "operations/operations.h"
 
 void my_func(void)
 {
@@ -34,7 +35,13 @@ void my_func(void)
 
 int	main()
 {
-	//my_func();
-	printf("%d\n", 0 % 5);
+	t_dll	*dll_a;
+	t_dll	*dll_b;
+	Node	*node1;
+	Node	*node2;
+	Node	*node3;
+	Node	*node4;
+
+	
 	return 0;
 }

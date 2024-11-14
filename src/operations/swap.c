@@ -52,7 +52,7 @@ void	swap(t_dll *dll)
 }
 
 /**
- * Swap first two elements on both stacks
+ * Swap first two elements in both stacks
  * @param dll1 Stack a
  * @param dll2 Stack b
 */

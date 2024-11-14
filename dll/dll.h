@@ -4,6 +4,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include "libft/libft.h"
 
 // element of the stack
 typedef struct Node
@@ -35,9 +36,6 @@ t_dll	*dll_append(t_dll *dll, Node *new_node);
 t_dll	*dll_prepend(t_dll *dll, Node *new_node);
 void	dll_clear(t_dll *dll);
 void	dll_iteri(t_dll *dll, void (*f)(Node *node));
-
+void	dll_printer(t_dll *dll);
 
 #endif // DLL_H
-
-//  32	  = 4	 = 41 = 90
-//	temp1	temp2
