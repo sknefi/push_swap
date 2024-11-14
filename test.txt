@@ -1,9 +1,0 @@
-Hope this helps!
-
-My name is Filip
-    And this is
-        Testing
-    Of a libft
-Makefile
-
-Enjoy your C journey.

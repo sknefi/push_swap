@@ -1,9 +1,10 @@
 NAME		=	main.a
 
 SRCS		=	./src/main.c \
-				# ./src/operations/push.c \
 				./src/operations/swap.c \
-				./src/operations/rotate.c \
+				./src/operations/push.c \
+				./tests/test1.c \
+				#./src/operations/rotate.c \
 
 OBJS		=	$(SRCS:.c=.o)
 
@@ -17,7 +18,7 @@ LIBFT_NAME	=	libft.a
 DLL_DIR		=	./dll
 DLL_LIB		=	./dll/dll.a
 
-TEST_NAME	=	test.out
+TEST_NAME	=	a.out
 
 all:		$(LIBFT_DIR)/$(LIBFT_NAME) $(DLL_LIB) $(NAME)
 			$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft $(DLL_LIB) -o $(TEST_NAME)
