@@ -19,7 +19,7 @@ static void	node_info_print(Node *node)
 void	dll_printer(t_dll *dll)
 {
 	ft_printf("     NULL     ");
-	dll_iteri(dll->head, node_info_print);
+	dll_iteri(dll, node_info_print);
 	if (dll->head != dll->tail)
 		ft_printf("     NULL     ");
 }

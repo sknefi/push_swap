@@ -33,15 +33,12 @@ void my_func(void)
 	printf("For b[%d] = %d, smallest in a: %d, closest bigger in a: %d\n", j, b[j], smallest, current_closest_bigger);
 }
 
-int	main()
+int	main(int argc, char *argv[])
 {
-	t_dll	*dll_a;
-	t_dll	*dll_b;
-	Node	*node1;
-	Node	*node2;
-	Node	*node3;
-	Node	*node4;
+	t_dll	*dll;
 
-	
+	(void) argc;
+	dll = dll_create(argv);
+	dll_printer(dll);
 	return 0;
 }

@@ -68,7 +68,6 @@ static void	handle_rotate(t_dll *dll, int offset, int i_nh, int i_nt)
 */
 void	rotate(t_dll *dll, int offset)
 {
-	int		i;
 	int		index_new_head;
 	int		index_new_tail;
 	Node	*temp;

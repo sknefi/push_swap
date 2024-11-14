@@ -1,6 +1,10 @@
 NAME		=	main.a
 
-SRCS		=	./src/main.c
+SRCS		=	./src/main.c \
+				# ./src/operations/push.c \
+				./src/operations/swap.c \
+				./src/operations/rotate.c \
+
 OBJS		=	$(SRCS:.c=.o)
 
 CC			=	cc
@@ -10,27 +14,33 @@ RM			=	rm -f
 LIBFT_DIR	=	./libft
 LIBFT_NAME	=	libft.a
 
+DLL_DIR		=	./dll
+DLL_LIB		=	./dll/dll.a
+
 TEST_NAME	=	test.out
 
-all:		$(LIBFT_DIR)/$(LIBFT_NAME) $(NAME)
-			$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(TEST_NAME)
+all:		$(LIBFT_DIR)/$(LIBFT_NAME) $(DLL_LIB) $(NAME)
+			$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft $(DLL_LIB) -o $(TEST_NAME)
 
 $(LIBFT_DIR)/$(LIBFT_NAME):
-			# make -C $(LIBFT_DIR)
+			make -C $(LIBFT_DIR)
+
+$(DLL_LIB):
+			make -C $(DLL_DIR)
 
 $(NAME):	$(OBJS)	
 			ar rc $(NAME) $(OBJS)
 
 clean:
 			$(RM) $(OBJS)
-			# make -C $(LIBFT_DIR) clean
+			make -C $(DLL_DIR) clean
+			make -C $(LIBFT_DIR) clean
 
 fclean:		clean
 			$(RM) $(NAME) $(TEST_NAME)
-			# make -C $(LIBFT_DIR) fclean
+			make -C $(DLL_DIR) fclean
+			make -C $(LIBFT_DIR) fclean
 
 re:			fclean all
-			# make -C $(LIBFT_DIR) re
 
-.phony:		all clean fclean re
-			# make -C $(LIBFT_DIR) all clean fclean re
+.PHONY:		all clean fclean re

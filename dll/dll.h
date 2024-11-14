@@ -4,7 +4,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 // element of the stack
 typedef struct Node
@@ -32,6 +32,7 @@ typedef struct dll
 } t_dll;
 
 t_dll	*dll_init(void);
+t_dll	*dll_create(char **argv);
 t_dll	*dll_append(t_dll *dll, Node *new_node);
 t_dll	*dll_prepend(t_dll *dll, Node *new_node);
 void	dll_clear(t_dll *dll);

@@ -1,7 +1,7 @@
 #ifndef OPERATIONS_H
 # define OPERATIONS_H
 
-#include "../dll/dll.h"
+#include "../../dll/dll.h"
 
 # include <unistd.h>
 # include <stdio.h>
