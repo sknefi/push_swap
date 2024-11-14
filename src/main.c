@@ -39,6 +39,8 @@ int	main(int argc, char *argv[])
 
 	(void) argc;
 	dll = dll_create(argv);
+	if (dll->head)
+		dll->head->data = 99;
 	dll_printer(dll);
 	return 0;
 }
