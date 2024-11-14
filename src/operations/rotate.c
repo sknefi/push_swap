@@ -27,11 +27,15 @@ static void	handle_rotate(t_dll *dll, int offset, int i_nh, int i_nt)
 
 }
 
-// offset = 0 => -
-// offset > 0 => r
-// offset < 0 => rr
-// offset is how many rotattions we should do in a row
-// for example [ra, ra, ra, pb] => 3 rotations
+/**
+ * 
+ * offset = 0 => - ;
+ * offset > 0 => r ;
+ * offset < 0 => rr ;
+ * for example [ra, ra, ra, pb] => 3 rotations
+ * @param dll stack a/b
+ * @param offset how many rotations we should do in a row
+*/
 void	rotate(t_dll *dll, int offset)
 {
 	int		i;

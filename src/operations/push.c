@@ -1,22 +1,36 @@
 #include "operations.h"
 
+/**
+ * Dekrement value of `node->index`
+ * 
+ * Used in > after removing `top node` from stack,
+ * then dekrement indexes of all nodes in dll
+ * @param node Node in dll
+*/
 static void	dekrement_indexes(Node *node)
 {
 	node->index--;
 }
 
-// unlink top node from src = $unlinked_node
-// set $unlinked_node next and prev to NULL
-// set new head and tail of dll
-// dekrement size
-// dekrement all indexes
+/**
+ * Unlink the `top node` from `dll`
+ * 
+ * Sets the `next` and `prev` pointers of the `unlinked node` to `NULL`
+ * 
+ * Updates the `dll head` and `tail` pointers as needed
+ * 
+ * Decrements the `dll size`,
+ * Decrement all `indexes of Nodes` 
+ * @param dll Pointer to the doubly linked list to modify.
+ * @return The `unlinked Node pointer`, or `NULL` if the list was empty.
+ */
 static Node	*unlink_first_node(t_dll *dll)
 {
-	Node 	*first_node;
+	Node	*first_node;
 	Node	*unlinked_node;
 
 	if (!dll || !dll->head)
-		return NULL;
+		return (NULL);
 	unlinked_node = dll->head;
 	first_node = dll->head->next;
 	unlinked_node->next = NULL;
@@ -30,12 +44,18 @@ static Node	*unlink_first_node(t_dll *dll)
 	return (unlinked_node);
 }
 
-// push the Node from stack "src_dll" to "dest_dll"
+/**
+ * Push Node from top of stack `srcl_dll` to top of stack `dest_dll`
+ * 
+ * if there is no `Node` left on `src_dll` nothing will happen
+ * @param dest_dll Pointer to `dest_dll` struct
+ * @param src_dll Pointer to `src_dll` struct
+*/
 void	push(t_dll *dest_dll, t_dll *src_dll)
 {
 	Node	*unlinked_node;
 
 	unlinked_node = unlink_first_node(src_dll);
-	if (unlinked_node)
+	if (unlinked_node) // Node was successfuly removed from $src_dll
 		dll_prepend(dest_dll, unlinked_node);
 }
