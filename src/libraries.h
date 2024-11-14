@@ -11,5 +11,7 @@ void	push(t_dll *dest_dll, t_dll *src_dll);
 
 // TESTS
 void	test1(int argc, char *argv[]);
+void	test2(int argc, char *argv[]);
+void	test3(int argc, char *argv[]);
 
 #endif // LIBRARIES_H
