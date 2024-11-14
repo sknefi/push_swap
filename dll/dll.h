@@ -6,6 +6,9 @@
 # include <stdlib.h>
 # include "../libft/libft.h"
 
+// all functions in dll are handling indexes
+// so in main program I don't need to care about indexes
+
 // element of the stack
 typedef struct Node
 {
@@ -33,8 +36,8 @@ typedef struct dll
 
 t_dll	*dll_init(void);
 t_dll	*dll_create(char **argv);
-t_dll	*dll_append(t_dll *dll, t_node *new_node);
-t_dll	*dll_prepend(t_dll *dll, t_node *new_node);
+void	*dll_append(t_dll *dll, t_node *new_node);
+void	*dll_prepend(t_dll *dll, t_node *new_node);
 void	dll_clear(t_dll *dll);
 void	dll_iteri(t_dll *dll, void (*f)(t_node *node));
 void	dll_printer(t_dll *dll);

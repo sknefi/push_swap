@@ -1,5 +1,10 @@
 #include "dll.h"
 
+/**
+ * Initialize node with `data`
+ * @param data Integer for node->data
+ * @return Initialized node
+*/
 static t_node	*init_node(int data)
 {
 	t_node	*new_node;
@@ -15,6 +20,11 @@ static t_node	*init_node(int data)
 	return (new_node);
 }
 
+/**
+ * Create `dll` with initialazing `nodes` with `data`
+ * @param argv Pointer to a pointers of char
+ * @return Created `Double Linked List` with `nodes`
+*/
 t_dll	*dll_create(char **argv)
 {
 	int		i;
@@ -26,7 +36,8 @@ t_dll	*dll_create(char **argv)
 	while (argv[i])
 	{
 		new_node = init_node(ft_atoi(argv[i]));
-		dll_prepend(dll, new_node);
+		// dll_prepend(dll, new_node);
+		dll_append(dll, new_node);
 		i++;
 	}
 	return (dll);

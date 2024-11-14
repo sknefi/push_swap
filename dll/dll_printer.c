@@ -1,5 +1,9 @@
 #include "dll.h"
 
+/**
+ * Print info about node
+ * @param node Initialized node
+*/
 static void	node_info_print(t_node *node)
 {
 	ft_printf("--------------\n");
@@ -16,6 +20,10 @@ static void	node_info_print(t_node *node)
 	ft_printf("==============\n\\    |  |    /\n");
 }
 
+/**
+ * All nodes from `dll` will be printed 
+ * @param dll Double Linked List
+*/
 void	dll_printer(t_dll *dll)
 {
 	ft_printf("\n     NULL     \n");

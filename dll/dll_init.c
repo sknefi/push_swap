@@ -1,5 +1,9 @@
 #include "../src/libraries.h"
 
+/**
+ * Initialize `Double Linked List` with default settings
+ * @return Initialized `Double Linked List`
+*/
 t_dll	*dll_init(void)
 {
 	t_dll	*dll;

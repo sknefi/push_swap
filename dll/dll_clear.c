@@ -1,5 +1,13 @@
 #include "../src/libraries.h"
 
+/**
+ * Free all `nodes` from `dll`
+ * 
+ * Then set `dll->heal = dll->tail = NULL`,
+ * 
+ * `dll->size = 0`
+ * @param dll Double linked list
+*/
 void	dll_clear(t_dll *dll)
 {
 	t_node	*temp;

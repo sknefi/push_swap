@@ -1,8 +1,14 @@
 #include "../src/libraries.h"
 
-// all functions in dll are handling indexes
-// so in main program I don't need to care about indexes
-t_dll	*dll_append(t_dll *dll, t_node *new_node)
+/**
+ * Append `node` to to the end of `dll`,
+ * set `index=dll->size`
+ * 
+ * If there is no `dll` or `new_node` NULL will be returned
+ * @param dll Double linked list
+ * @param new_node Initialized node
+*/
+void	*dll_append(t_dll *dll, t_node *new_node)
 {
 	if (!dll || !new_node)
 		return (NULL);

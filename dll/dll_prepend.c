@@ -1,12 +1,22 @@
 #include "../src/libraries.h"
 
+/**
+ * Inkrement index of `node`
+ * @param node Initialized node
+*/
 static void	inkrement_indexes(t_node *node)
 {
 	node->index++;
 }
 
 // ikrement index of each node, then add new_node with index=0
-t_dll	*dll_prepend(t_dll *dll, t_node *new_node)
+/**
+ * Inkrement index of each `node`, then add `new_node` 
+ * with `index=0`
+ * @param dll Double Linked List
+ * @param new_node Node that will be set as new `head`
+*/
+void	*dll_prepend(t_dll *dll, t_node *new_node)
 {
 	if (!dll || !new_node)
 		return (NULL);
