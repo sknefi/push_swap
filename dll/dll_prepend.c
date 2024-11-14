@@ -1,12 +1,12 @@
 #include "../src/libraries.h"
 
-static void	inkrement_indexes(Node *node)
+static void	inkrement_indexes(t_node *node)
 {
 	node->index++;
 }
 
 // ikrement index of each node, then add new_node with index=0
-t_dll	*dll_prepend(t_dll *dll, Node *new_node)
+t_dll	*dll_prepend(t_dll *dll, t_node *new_node)
 {
 	if (!dll || !new_node)
 		return (NULL);

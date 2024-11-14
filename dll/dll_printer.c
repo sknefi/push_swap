@@ -1,6 +1,6 @@
 #include "dll.h"
 
-static void	node_info_print(Node *node)
+static void	node_info_print(t_node *node)
 {
 	ft_printf("--------------\n");
 	ft_printf("| %p|\n", node);
@@ -19,8 +19,10 @@ static void	node_info_print(Node *node)
 void	dll_printer(t_dll *dll)
 {
 	ft_printf("\n     NULL     \n");
-	ft_printf("/    |  |    \\\n");
+	if (dll->head)
+		ft_printf("/    |  |    \\\n");
 	dll_iteri(dll, node_info_print);
 	if (dll->head != NULL && dll->tail != NULL)
-		ft_printf("     NULL     \n");
+		ft_printf("     NULL     ");
+	printf("\n\n");
 }

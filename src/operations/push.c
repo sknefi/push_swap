@@ -7,13 +7,13 @@
  * then dekrement indexes of all nodes in dll
  * @param node Node in dll
 */
-static void	dekrement_indexes(Node *node)
+static void	dekrement_indexes(t_node *node)
 {
 	node->index--;
 }
 
 /**
- * Unlink the `top node` from `dll`
+ * Unlink the `top Node` from `dll`
  * 
  * Sets the `next` and `prev` pointers of the `unlinked node` to `NULL`
  * 
@@ -24,10 +24,10 @@ static void	dekrement_indexes(Node *node)
  * @param dll Pointer to the doubly linked list to modify.
  * @return The `unlinked Node pointer`, or `NULL` if the list was empty.
  */
-static Node	*unlink_first_node(t_dll *dll)
+static t_node	*unlink_first_node(t_dll *dll)
 {
-	Node	*first_node;
-	Node	*unlinked_node;
+	t_node	*first_node;
+	t_node	*unlinked_node;
 
 	if (!dll || !dll->head)
 		return (NULL);
@@ -53,7 +53,7 @@ static Node	*unlink_first_node(t_dll *dll)
 */
 void	push(t_dll *dest_dll, t_dll *src_dll)
 {
-	Node	*unlinked_node;
+	t_node	*unlinked_node;
 
 	unlinked_node = unlink_first_node(src_dll);
 	if (unlinked_node) // Node was successfuly removed from $src_dll

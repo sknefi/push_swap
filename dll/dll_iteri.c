@@ -1,8 +1,8 @@
 #include "../src/libraries.h"
 
-void	dll_iteri(t_dll *dll, void (*f)(Node *node))
+void	dll_iteri(t_dll *dll, void (*f)(t_node *node))
 {
-	Node	*temp;
+	t_node	*temp;
 
 	if (!dll || !f)
 		return ;

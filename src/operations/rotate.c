@@ -48,7 +48,7 @@ static int	calc_new_tail(int index_new_head, int size)
 */
 static void	handle_rotate(t_dll *dll, int offset, int i_nh, int i_nt)
 {
-	Node	*temp;
+	t_node	*temp;
 
 
 }
@@ -70,7 +70,7 @@ void	rotate(t_dll *dll, int offset)
 {
 	int		index_new_head;
 	int		index_new_tail;
-	Node	*temp;
+	t_node	*temp;
 
 	if (!dll || dll->size < 2)
 		return ;

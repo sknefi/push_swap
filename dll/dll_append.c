@@ -2,7 +2,7 @@
 
 // all functions in dll are handling indexes
 // so in main program I don't need to care about indexes
-t_dll	*dll_append(t_dll *dll, Node *new_node)
+t_dll	*dll_append(t_dll *dll, t_node *new_node)
 {
 	if (!dll || !new_node)
 		return (NULL);

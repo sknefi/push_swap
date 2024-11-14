@@ -5,7 +5,7 @@
  * @param x Node1
  * @param y Node2
 */
-void static	swap_indexes(Node *x, Node *y)
+void static	swap_indexes(t_node *x, t_node *y)
 {
 	int		temp;
 
@@ -28,8 +28,8 @@ void static	swap_indexes(Node *x, Node *y)
  */
 void	swap(t_dll *dll)
 {
-	Node	*temp1;
-	Node	*temp2;
+	t_node	*temp1;
+	t_node	*temp2;
 
 	if (dll->size < 2)
 		return ;

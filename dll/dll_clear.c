@@ -2,8 +2,8 @@
 
 void	dll_clear(t_dll *dll)
 {
-	Node	*temp;
-	Node	*head;
+	t_node	*temp;
+	t_node	*head;
 
 	head = dll->head;
 	while (head)

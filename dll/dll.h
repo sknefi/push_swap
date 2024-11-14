@@ -14,29 +14,29 @@ typedef struct Node
 	struct Node		*next;
 	struct Node		*prev;
 	struct Node		*target_node; // toto mozno musim ostranit ak sa rozhodne pre t_target_nodes
-} Node;
+}	t_node;
 
 // 
 typedef struct target_nodes
 {
-	Node	*from_a;
-	Node	*to_b;
-} t_target_nodes;
+	t_node	*from_a;
+	t_node	*to_b;
+}	t_target_nodes;
 
 // stack a, stack b
 typedef struct dll
 {
 	int		size;
-	Node	*head;
-	Node	*tail;
-} t_dll;
+	t_node	*head;
+	t_node	*tail;
+}	t_dll;
 
 t_dll	*dll_init(void);
 t_dll	*dll_create(char **argv);
-t_dll	*dll_append(t_dll *dll, Node *new_node);
-t_dll	*dll_prepend(t_dll *dll, Node *new_node);
+t_dll	*dll_append(t_dll *dll, t_node *new_node);
+t_dll	*dll_prepend(t_dll *dll, t_node *new_node);
 void	dll_clear(t_dll *dll);
-void	dll_iteri(t_dll *dll, void (*f)(Node *node));
+void	dll_iteri(t_dll *dll, void (*f)(t_node *node));
 void	dll_printer(t_dll *dll);
 
 #endif // DLL_H
