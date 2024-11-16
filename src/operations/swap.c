@@ -1,20 +1,6 @@
 #include "../libraries.h"
 
 /**
- * Helper function to swap `Nodes indexes`
- * @param x Node1
- * @param y Node2
-*/
-void static	swap_indexes(t_node *x, t_node *y)
-{
-	int		temp;
-
-	temp = x->index;
-	x->index = y->index;
-	y->index = temp;
-}
-
-/**
  * Swaps the first two nodes in dll
  * 
  * Init `temp1` and `temp2` and asign them as `dll->head` and `dll->head->next`

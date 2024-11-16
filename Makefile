@@ -1,10 +1,11 @@
 NAME		=	main.a
 
 SRCS		=	./src/main.c \
+				./src/operations/operation_utils.c \
 				./src/operations/swap.c \
 				./src/operations/push.c \
-				./tests/test1.c \
 				./src/operations/rotate.c \
+				./tests/test1.c \
 
 OBJS		=	$(SRCS:.c=.o)
 

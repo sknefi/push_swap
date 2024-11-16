@@ -1,18 +1,6 @@
 #include "operations.h"
 
 /**
- * Dekrement value of `node->index`
- * 
- * Used in > after removing `top node` from stack,
- * then dekrement indexes of all nodes in dll
- * @param node Node in dll
-*/
-static void	dekrement_indexes(t_node *node)
-{
-	node->index--;
-}
-
-/**
  * Unlink the `top Node` from `dll`
  * 
  * Sets the `next` and `prev` pointers of the `unlinked node` to `NULL`
