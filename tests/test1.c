@@ -102,3 +102,54 @@ void	test3(int argc, char *argv[])
 	dll_printer(dll_a);
 	dll_printer(dll_b);
 }
+
+/**
+ * ra
+*/
+void	test4(int argc, char *argv[])
+{
+	t_dll	*dll_a;
+	t_dll	*dll_b;
+
+	(void) argc;
+	dll_a = dll_create(argv);
+	dll_b = dll_init();
+
+	dll_printer(dll_a);
+	dll_printer(dll_b);
+
+	ft_printf("##################\n");
+
+	rotate(dll_a, 5);
+
+	dll_printer(dll_a);
+	dll_printer(dll_b);
+}
+
+/**
+ * pb rr
+*/
+void	test5(int argc, char *argv[])
+{
+	t_dll	*dll_a;
+	t_dll	*dll_b;
+
+	(void) argc;
+	dll_a = dll_create(argv);
+	dll_b = dll_init();
+
+	push(dll_b, dll_a);
+	push(dll_b, dll_a);
+	push(dll_b, dll_a);
+
+	dll_printer(dll_a);
+	dll_printer(dll_b);
+
+	ft_printf("##################\n");
+
+
+	rotate_both(dll_a, dll_b, 2);
+
+	dll_printer(dll_a);
+	dll_printer(dll_b);
+}

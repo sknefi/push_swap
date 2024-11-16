@@ -30,6 +30,20 @@ static int	calc_new_tail(int index_new_head, int size)
 	return (index_new_head - 1);
 }
 
+t_node	*node_from_index(t_dll *dll, int index)
+{
+	t_node	*temp;
+
+	temp = dll->head;
+	while (temp)
+	{
+		if (temp->index == index)
+			return (temp);
+		temp = temp->next;
+	}
+	return (NULL); // but this shouldnt happen in this algorithm handle_rotate
+}
+
 /**
  * Function that `rotates` all Nodes in `dll`
  * 
@@ -46,11 +60,20 @@ static int	calc_new_tail(int index_new_head, int size)
  * @param i_nh Index of a new head (after rotation)
  * @param i_nt Index of a new tail (after rotation)
 */
-static void	handle_rotate(t_dll *dll, int offset, int i_nh, int i_nt)
+static void	handle_rotate(t_dll *dll, int i_nh, int i_nt)
 {
-	t_node	*temp;
+	t_node	*new_head;
+	t_node	*new_tail;
 
-
+	new_head = node_from_index(dll, i_nh);
+	new_tail = node_from_index(dll, i_nt);
+	
+	new_head->prev = NULL;
+	dll->head->prev = dll->tail;
+	dll->tail->next = dll->head;
+	new_tail->next = NULL;
+	dll->head = new_head;
+	dll->tail = new_tail;
 }
 
 /**
@@ -70,7 +93,6 @@ void	rotate(t_dll *dll, int offset)
 {
 	int		index_new_head;
 	int		index_new_tail;
-	t_node	*temp;
 
 	if (!dll || dll->size < 2)
 		return ;
@@ -78,6 +100,8 @@ void	rotate(t_dll *dll, int offset)
 	if (index_new_head == 0)
 		return ; // no change needed
 	index_new_tail = calc_new_tail(index_new_head, dll->size);
+	handle_rotate(dll, index_new_head, index_new_tail);
+	// zmenit indexy
 }
 
 /**
