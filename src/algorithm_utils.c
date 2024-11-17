@@ -70,6 +70,20 @@ void	calc_costs(t_dll *stack_a, t_dll *stack_b)
 	while (temp_b)
 	{
 		temp_a = temp_b->target_node;
+		if (!is_node_above_median(temp_b, stack_b->size)
+				&& !is_node_above_median(temp_a, stack_a->size))
+		{
+			temp_b->cost = ft_max(temp_a->index, temp_b->index);
+			temp_b = temp_b->next;
+			continue ;
+		}
+		if (is_node_above_median(temp_b, stack_b->size)
+				&& is_node_above_median(temp_a, stack_a->size))
+		{
+			temp_b->cost = ft_max(stack_a->size - temp_a->index, stack_b->size - temp_b->index);
+			temp_b = temp_b->next;
+			continue ;
+		}
 		if (!is_node_above_median(temp_b, stack_b->size))
 			temp_b->cost = temp_b->index;
 		else
@@ -107,10 +121,30 @@ void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
 	t_node	*temp_a;
 	t_node	*temp_b;
 
-	temp_a = stack_a->head;
-	temp_b = stack_b->head;
+	temp_b = node_with_best_cost(stack_b);
+	temp_a = temp_b->target_node;
 	while (temp_a->index != 0 && temp_b->index != 0)
 	{
-		
+		// musim checknut median a podla toho to rotatenut alebo reverserotatnut
+		if (!is_node_above_median(temp_b, stack_b->size)
+				&& !is_node_above_median(temp_a, stack_a->size))
+		{
+			rotate_both(stack_a, stack_b, ft_abs(temp_a->index - temp_b->index));
+			continue ;	
+		}
+		if (is_node_above_median(temp_b, stack_b->size)
+				&& is_node_above_median(temp_a, stack_a->size))
+		{
+			rotate_both(stack_a, stack_b, -ft_abs(temp_a->index - temp_b->index));
+			continue ;	
+		}
+		if (!is_node_above_median(temp_b, stack_b->size))
+			rotate(stack_b, temp_b->index);
+		else
+			rotate(stack_b, -(stack_b->size - temp_b->index));
+		if (!is_node_above_median(temp_a, stack_a->size))
+			rotate(stack_a, temp_a->index);
+		else
+			rotate(stack_a, -(stack_a->size - temp_a->index));
 	}
 }

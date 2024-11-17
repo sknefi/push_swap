@@ -7,6 +7,9 @@
 
 // UTILS
 int	is_node_above_median(t_node *node, int size_of_stack);
+int	ft_abs(int x);
+int	ft_min(int x, int y);
+int	ft_max(int x, int y);
 
 // ALGO UTILS
 
@@ -14,6 +17,7 @@ void	create_target_nodes(t_dll *stack_a, t_dll *stack_b);
 void	prepare_stack_a(t_dll *stack_a, t_dll *stack_b);
 void	calc_costs(t_dll *stack_a, t_dll *stack_b);
 t_node	*node_with_best_cost(t_dll *stack_b);
+void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b);
 
 // ALGO
 
