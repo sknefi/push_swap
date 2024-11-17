@@ -1,6 +1,11 @@
-1. spravit operacia na dll
 2. vymysliet ako to bude s target_nodes
 	a. Node.target_node		- atribut na node
 		asi toto bude najlepsia volba, v kazdej iteracii budem porovnavat cheapest (z minulych iteracii) a current
 	b. t_target_nodes		- samostatny struct
+
+
+
+
+DONE
+1. spravit operacia na dll
 3. pridate indexi do Node structu aby sa lahsie urcoval median

@@ -13,6 +13,7 @@
 typedef struct Node
 {
 	int				data;
+	int				cost;
 	int				index;
 	struct Node		*next;
 	struct Node		*prev;
@@ -22,8 +23,9 @@ typedef struct Node
 // 
 typedef struct target_nodes
 {
-	t_node	*from_a;
-	t_node	*to_b;
+	int		cost;
+	t_node	*from_dll1;
+	t_node	*to_dll2;
 }	t_target_nodes;
 
 // stack a, stack b

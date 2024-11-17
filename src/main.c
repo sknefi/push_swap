@@ -4,6 +4,6 @@
 int	main(int argc, char *argv[])
 {
 	//test1(argc, argv);
-	test5(argc, argv);
+	test21(argc, argv);
 	return (EXIT_SUCCESS);
 }

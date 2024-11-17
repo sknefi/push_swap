@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "../src/libraries.h"
 
+// TESTS FOR OPERATIONS
+
 /**
  * init stack `a`, `b`
  * 
@@ -47,7 +49,9 @@ void	test1(int argc, char *argv[])
 
 	ft_printf("###################\n");
 
+	ft_printf("%d\n", dll_a->size);
 	dll_printer(dll_a);
+	ft_printf("%d\n", dll_b->size);
 	dll_printer(dll_b);
 }
 

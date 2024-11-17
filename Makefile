@@ -5,7 +5,11 @@ SRCS		=	./src/main.c \
 				./src/operations/swap.c \
 				./src/operations/push.c \
 				./src/operations/rotate.c \
+				./src/utils.c \
+				./src/algorithm.c \
+				./src/algorithm_utils.c \
 				./tests/test1.c \
+				./tests/test2.c \
 
 OBJS		=	$(SRCS:.c=.o)
 

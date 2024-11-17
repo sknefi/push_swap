@@ -13,6 +13,7 @@ static t_node	*init_node(int data)
 	if (!new_node)
 		ft_error("Malloc failed - init_node()");
 	new_node->data = data;
+	new_node->cost = -1;
 	new_node->index = 0;
 	new_node->next = NULL;
 	new_node->prev = NULL;

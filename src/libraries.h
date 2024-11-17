@@ -5,17 +5,28 @@
 # include "../libft/libft.h"
 # include "operations/operations.h"
 
-void	swap(t_dll *dll);
-void	swap_both(t_dll *dll1, t_dll *dll2);
-void	push(t_dll *dest_dll, t_dll *src_dll);
-void	rotate(t_dll *dll, int offset);
-void	rotate_both(t_dll *dll1, t_dll *dll2, int offset);
+// UTILS
+int	is_node_above_median(t_node *node, int size_of_stack);
+
+// ALGO UTILS
+
+void	create_target_nodes(t_dll *stack_a, t_dll *stack_b);
+void	prepare_stack_a(t_dll *stack_a, t_dll *stack_b);
+void	calc_costs(t_dll *stack_a, t_dll *stack_b);
+t_node	*node_with_best_cost(t_dll *stack_b);
+
+// ALGO
+
+void	push_swap(t_dll *stack_a, t_dll *stack_b);
 
 // TESTS
+
 void	test1(int argc, char *argv[]);
 void	test2(int argc, char *argv[]);
 void	test3(int argc, char *argv[]);
 void	test4(int argc, char *argv[]);
 void	test5(int argc, char *argv[]);
+
+void	test21(int argc, char *argv[]);
 
 #endif // LIBRARIES_H
