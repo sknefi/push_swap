@@ -1,11 +1,16 @@
-2. vymysliet ako to bude s target_nodes
-	a. Node.target_node		- atribut na node
-		asi toto bude najlepsia volba, v kazdej iteracii budem porovnavat cheapest (z minulych iteracii) a current
-	b. t_target_nodes		- samostatny struct
-
-
+NEED
+4. handle rotate z a do b,
+	I.		prepare_stack_a 
+	II. 	create_target_nodes
+	III.	calc_costs
+	IV.		handle_rotate_a_b (nájdi najlacnejší node, a dostaň ho na TOP spolu s jeho target nodeom)
+	V.		push a <- b
 
 
 DONE
 1. spravit operacia na dll
 3. pridate indexi do Node structu aby sa lahsie urcoval median
+2. vymysliet ako to bude s target_nodes
+	a. Node.target_node		- atribut na node
+		asi toto bude najlepsia volba, v kazdej iteracii budem porovnavat cheapest (z minulych iteracii) a current
+	b. t_target_nodes		- samostatny struct

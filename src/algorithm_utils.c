@@ -130,7 +130,7 @@ void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
 				&& !is_node_above_median(temp_a, stack_a->size))
 		{
 			rotate_both(stack_a, stack_b, ft_abs(temp_a->index - temp_b->index));
-			continue ;	
+			continue ;
 		}
 		if (is_node_above_median(temp_b, stack_b->size)
 				&& is_node_above_median(temp_a, stack_a->size))
