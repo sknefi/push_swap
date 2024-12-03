@@ -46,4 +46,5 @@ void	push(t_dll *dest_dll, t_dll *src_dll)
 	unlinked_node = unlink_first_node(src_dll);
 	if (unlinked_node) // Node was successfuly removed from $src_dll
 		dll_prepend(dest_dll, unlinked_node);
+	ft_printf("p%c\n", dest_dll->name);
 }

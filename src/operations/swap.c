@@ -12,7 +12,7 @@
  * Swap their `indexes`
  * @param dll Pointer to the doubly linked list (t_dll) structure
  */
-void	swap(t_dll *dll)
+void	swap(t_dll *dll, int print_flag)
 {
 	t_node	*temp1;
 	t_node	*temp2;
@@ -31,6 +31,8 @@ void	swap(t_dll *dll)
 	if (dll->size == 2)
 		dll->tail = temp1;
 	dll->head = temp2;
+	if (print_flag)
+		ft_printf("s%c\n", dll->name);
 }
 
 /**
@@ -40,6 +42,7 @@ void	swap(t_dll *dll)
 */
 void	swap_both(t_dll *dll1, t_dll *dll2)
 {
-	swap(dll1);
-	swap(dll2);
+	swap(dll1, FALSE);
+	swap(dll2, FALSE);
+	ft_printf("ss\n");
 }

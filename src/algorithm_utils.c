@@ -123,18 +123,18 @@ void handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
         if (temp_b->index != 0)
         {
             if (!is_node_above_median(temp_b, stack_b->size))
-                rotate(stack_b, 1);
+                rotate(stack_b, 1, TRUE);
             else
-                rotate(stack_b, -1);
+                rotate(stack_b, -1, TRUE);
         }
 
         // Case 3: Rotate stack_a to bring temp_a to the top
         if (temp_a->index != 0)
         {
             if (!is_node_above_median(temp_a, stack_a->size))
-                rotate(stack_a, 1);
+                rotate(stack_a, 1, TRUE);
             else
-                rotate(stack_a, -1);
+                rotate(stack_a, -1, TRUE);
         }
     }
 }
@@ -147,12 +147,12 @@ void	rotate_sorted_stack_a(t_dll *stack_a)
     if (smallest_node->index <= stack_a->size / 2)
     {
         while (stack_a->head != smallest_node)
-            rotate(stack_a, 1);
+            rotate(stack_a, 1, TRUE);
     }
     else
     {
         while (stack_a->head != smallest_node)
-            rotate(stack_a, -1);
+            rotate(stack_a, -1, TRUE);
     }
 }
 

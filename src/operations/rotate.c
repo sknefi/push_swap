@@ -1,4 +1,4 @@
-#include "operations.h"
+#include "../libraries.h"
 
 /**
  * Find index of `new head` after rotation by an `offset`
@@ -75,7 +75,7 @@ static void	handle_rotate(t_dll *dll, int i_nh, int i_nt)
  * @param dll Stack a or b
  * @param offset How many rotations `(rx/rrx)` we should do in a row
 */
-void	rotate(t_dll *dll, int offset)
+void	rotate(t_dll *dll, int offset, int print_flag)
 {
 	int		index_new_head;
 	int		index_new_tail;
@@ -88,6 +88,13 @@ void	rotate(t_dll *dll, int offset)
 	index_new_tail = calc_new_tail(index_new_head, dll->size);
 	handle_rotate(dll, index_new_head, index_new_tail);
 	iteri_indexes(dll);
+	if (print_flag)
+	{
+		if (offset > 0)
+			ft_printf("r%c\n", dll->name);
+		else
+			ft_printf("rr%c\n", dll->name);
+	}
 }
 
 /**
@@ -99,6 +106,10 @@ void	rotate(t_dll *dll, int offset)
 */
 void	rotate_both(t_dll *dll1, t_dll *dll2, int offset)
 {
-	rotate(dll1, offset);
-	rotate(dll2, offset);
+	rotate(dll1, offset, FALSE);
+	rotate(dll2, offset, FALSE);
+	if (offset > 0)
+		ft_printf("rr\n");
+	else
+		ft_printf("rrr\n");
 }

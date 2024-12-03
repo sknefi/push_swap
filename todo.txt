@@ -1,11 +1,6 @@
 NEED
-4. handle rotate z a do b,
-	I.		prepare_stack_a 
-	II. 	create_target_nodes
-	III.	calc_costs
-	IV.		handle_rotate_a_b (nájdi najlacnejší node, a dostaň ho na TOP spolu s jeho target nodeom)
-	V.		push a <- b
-
+5. pouzit CHECKER a otestovat pocet operacii 
+6. norminette
 
 DONE
 1. spravit operacia na dll
@@ -14,3 +9,9 @@ DONE
 	a. Node.target_node		- atribut na node
 		asi toto bude najlepsia volba, v kazdej iteracii budem porovnavat cheapest (z minulych iteracii) a current
 	b. t_target_nodes		- samostatny struct
+4. handle rotate z a do b,
+	I.		prepare_stack_a 
+	II. 	create_target_nodes
+	III.	calc_costs
+	IV.		handle_rotate_a_b (nájdi najlacnejší node, a dostaň ho na TOP spolu s jeho target nodeom)
+	V.		push a <- b

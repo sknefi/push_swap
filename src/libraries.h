@@ -5,6 +5,9 @@
 # include "../libft/libft.h"
 # include "operations/operations.h"
 
+# define TRUE 1
+# define FALSE 0
+
 // UTILS
 int	is_node_above_median(t_node *node, int size_of_stack);
 int	ft_abs(int x);
@@ -21,6 +24,7 @@ void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b);
 void	rotate_sorted_stack_a(t_dll *stack_a);
 
 // FAST SORTS
+void	sort_elements_2(t_dll *stack_a);
 void	sort_elements_3(t_dll *stack_a);
 
 // FAST SORTS UTILS
