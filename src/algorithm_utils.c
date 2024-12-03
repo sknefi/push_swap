@@ -116,35 +116,47 @@ t_node	*node_with_best_cost(t_dll *stack_b)
 	return (cheapest_node);
 }
 
-void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
+void handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
 {
-	t_node	*temp_a;
-	t_node	*temp_b;
+    t_node *temp_a;
+    t_node *temp_b;
 
-	temp_b = node_with_best_cost(stack_b);
-	temp_a = temp_b->target_node;
-	while (temp_a->index != 0 && temp_b->index != 0)
-	{
-		// musim checknut median a podla toho to rotatenut alebo reverserotatnut
-		if (!is_node_above_median(temp_b, stack_b->size)
-				&& !is_node_above_median(temp_a, stack_a->size))
-		{
-			rotate_both(stack_a, stack_b, ft_abs(temp_a->index - temp_b->index));
-			continue ;
-		}
-		if (is_node_above_median(temp_b, stack_b->size)
-				&& is_node_above_median(temp_a, stack_a->size))
-		{
-			rotate_both(stack_a, stack_b, -ft_abs(temp_a->index - temp_b->index));
-			continue ;	
-		}
-		if (!is_node_above_median(temp_b, stack_b->size))
-			rotate(stack_b, temp_b->index);
-		else
-			rotate(stack_b, -(stack_b->size - temp_b->index));
-		if (!is_node_above_median(temp_a, stack_a->size))
-			rotate(stack_a, temp_a->index);
-		else
-			rotate(stack_a, -(stack_a->size - temp_a->index));
-	}
+    temp_b = node_with_best_cost(stack_b);
+    temp_a = temp_b->target_node;
+	printf("temp_b->data: %d\n", temp_b->data);
+	printf("temp_a->data: %d\n", temp_a->data);
+    while (temp_a->index != 0 || temp_b->index != 0)
+    {
+        // Case 1: Rotate both stacks together if beneficial
+        if (!is_node_above_median(temp_b, stack_b->size)
+            && !is_node_above_median(temp_a, stack_a->size))
+        {
+            rotate_both(stack_a, stack_b, 1);
+            continue;
+        }
+        if (is_node_above_median(temp_b, stack_b->size)
+            && is_node_above_median(temp_a, stack_a->size))
+        {
+            rotate_both(stack_a, stack_b, -1);
+            continue;
+        }
+
+        // Case 2: Rotate stack_b to bring temp_b to the top
+        if (temp_b->index != 0)
+        {
+            if (!is_node_above_median(temp_b, stack_b->size))
+                rotate(stack_b, 1);
+            else
+                rotate(stack_b, -1);
+        }
+
+        // Case 3: Rotate stack_a to bring temp_a to the top
+        if (temp_a->index != 0)
+        {
+            if (!is_node_above_median(temp_a, stack_a->size))
+                rotate(stack_a, 1);
+            else
+                rotate(stack_a, -1);
+        }
+    }
 }

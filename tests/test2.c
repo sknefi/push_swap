@@ -11,7 +11,9 @@ void	test21(int argc, char *argv[])
 
 	(void) argc;
 	dll_a = dll_create(argv);
+	dll_a->name = 'a';
 	dll_b = dll_init();
+	dll_b->name = 'b';
 	dll_printer(dll_a);
 	dll_printer(dll_b);
 

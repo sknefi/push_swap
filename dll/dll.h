@@ -31,6 +31,7 @@ typedef struct target_nodes
 // stack a, stack b
 typedef struct dll
 {
+	char	name;
 	int		size;
 	t_node	*head;
 	t_node	*tail;
