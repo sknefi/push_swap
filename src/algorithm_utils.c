@@ -96,26 +96,6 @@ void	calc_costs(t_dll *stack_a, t_dll *stack_b)
 	}
 }
 
-// calc all costs in nodes from stack_b
-// return the node with the lowest cost
-t_node	*node_with_best_cost(t_dll *stack_b)
-{
-	t_node	*temp;
-	t_node	*cheapest_node;
-
-	temp = stack_b->head;
-	cheapest_node = stack_b->head;
-	while (temp)
-	{
-		if (temp->cost == 0 || temp->cost == 1)
-			return (temp);
-		if (temp->cost < cheapest_node->cost)
-			cheapest_node = temp;
-		temp = temp->next;
-	}
-	return (cheapest_node);
-}
-
 void handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
 {
     t_node *temp_a;
@@ -123,8 +103,6 @@ void handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
 
     temp_b = node_with_best_cost(stack_b);
     temp_a = temp_b->target_node;
-	printf("temp_b->data: %d\n", temp_b->data);
-	printf("temp_a->data: %d\n", temp_a->data);
     while (temp_a->index != 0 || temp_b->index != 0)
     {
         // Case 1: Rotate both stacks together if beneficial
@@ -160,3 +138,21 @@ void handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
         }
     }
 }
+
+void	rotate_sorted_stack_a(t_dll *stack_a)
+{
+	t_node	*smallest_node;
+
+	smallest_node = find_smallest_node(stack_a);
+    if (smallest_node->index <= stack_a->size / 2)
+    {
+        while (stack_a->head != smallest_node)
+            rotate(stack_a, 1);
+    }
+    else
+    {
+        while (stack_a->head != smallest_node)
+            rotate(stack_a, -1);
+    }
+}
+
