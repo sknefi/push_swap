@@ -1,4 +1,6 @@
 NEED
+4. check for duplicates
+5. >MAXINT error
 5. pouzit CHECKER a otestovat pocet operacii 
 6. norminette
 7. vyriesit memoryleaks keby sa daco pokazilo

@@ -1,6 +1,12 @@
 #include "libraries.h"
 
-void	operation_handler(char *op, t_dll *stack_a, t_dll *stack_b)
+static void	checker_error(void)
+{
+	ft_printf("Error\n");
+	exit(EXIT_FAILURE);
+}
+
+static void	operation_handler(char *op, t_dll *stack_a, t_dll *stack_b)
 {
 	if ((ft_strncmp(op, "sa", 3)) == 0)
 		swap(stack_a, FALSE);
@@ -24,7 +30,10 @@ void	operation_handler(char *op, t_dll *stack_a, t_dll *stack_b)
 		rotate(stack_b, -1, FALSE);
 	else if (ft_strncmp(op, "rrr", 4) == 0)
 		rotate_both(stack_a, stack_b, -1, FALSE);
+	else
+		checker_error();
 }
+
 
 int	main(int argc, char *argv[])
 {
@@ -35,15 +44,16 @@ int	main(int argc, char *argv[])
 	(void)argc;
 	stack_a = dll_create(argv, 'a');
 	stack_b = dll_init('b');
-	while ((line = get_next_line(STDIN_FILENO)) != NULL)
+
+	while (1)
 	{
-		if (line[0] == '\n' && line[1] == '\t')
+		line = get_next_line(STDIN_FILENO);
+		if (line == NULL)
 		{
 			if (is_already_sorted(stack_a, stack_b))
 				ft_printf("OK\n");
 			else
 				ft_printf("KO\n");
-			free(line);
 			break ;
 		}
 		extract_newline(line);
