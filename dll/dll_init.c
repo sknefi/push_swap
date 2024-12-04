@@ -7,7 +7,7 @@
 t_dll	*dll_init(char name)
 {
 	t_dll	*dll;
-    
+
 	dll = (t_dll *)malloc(sizeof(t_dll));
 	if (!dll)
 		ft_error("malloc failed dll_init()\n");

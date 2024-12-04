@@ -53,7 +53,6 @@ static void	handle_rotate(t_dll *dll, int i_nh, int i_nt)
 
 	new_head = get_node_from_index(dll, i_nh);
 	new_tail = get_node_from_index(dll, i_nt);
-	
 	new_head->prev = NULL;
 	dll->head->prev = dll->tail;
 	dll->tail->next = dll->head;
@@ -84,7 +83,7 @@ void	rotate(t_dll *dll, int offset, int print_flag)
 		return ;
 	index_new_head = calc_new_head(offset, dll->size);
 	if (index_new_head == 0)
-		return ; // no change needed
+		return ;
 	index_new_tail = calc_new_tail(index_new_head, dll->size);
 	handle_rotate(dll, index_new_head, index_new_tail);
 	iteri_indexes(dll);

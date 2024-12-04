@@ -37,7 +37,7 @@ int	main(int argc, char *argv[])
 	stack_b = dll_init('b');
 	while ((line = get_next_line(STDIN_FILENO)) != NULL)
 	{
-		if (line[0] == '\n' && line[1] == '\0')
+		if (line[0] == '\n' && line[1] == '\t')
 		{
 			if (is_already_sorted(stack_a, stack_b))
 				ft_printf("OK\n");

@@ -1,6 +1,7 @@
 NEED
 5. pouzit CHECKER a otestovat pocet operacii 
 6. norminette
+7. vyriesit memoryleaks keby sa daco pokazilo
 
 DONE
 1. spravit operacia na dll

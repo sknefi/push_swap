@@ -71,14 +71,14 @@ void	calc_costs(t_dll *stack_a, t_dll *stack_b)
 	{
 		temp_a = temp_b->target_node;
 		if (!is_node_above_median(temp_b, stack_b->size)
-				&& !is_node_above_median(temp_a, stack_a->size))
+			&& !is_node_above_median(temp_a, stack_a->size))
 		{
 			temp_b->cost = ft_max(temp_a->index, temp_b->index);
 			temp_b = temp_b->next;
 			continue ;
 		}
 		if (is_node_above_median(temp_b, stack_b->size)
-				&& is_node_above_median(temp_a, stack_a->size))
+			&& is_node_above_median(temp_a, stack_a->size))
 		{
 			temp_b->cost = ft_max(stack_a->size - temp_a->index, stack_b->size - temp_b->index);
 			temp_b = temp_b->next;
@@ -96,47 +96,45 @@ void	calc_costs(t_dll *stack_a, t_dll *stack_b)
 	}
 }
 
-void handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
+void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
 {
-    t_node *temp_a;
-    t_node *temp_b;
+	t_node	*temp_a;
+	t_node	*temp_b;
 
-    temp_b = node_with_best_cost(stack_b);
-    temp_a = temp_b->target_node;
-    while (temp_a->index != 0 || temp_b->index != 0)
-    {
-        // Case 1: Rotate both stacks together if beneficial
-        if (!is_node_above_median(temp_b, stack_b->size)
-            && !is_node_above_median(temp_a, stack_a->size))
-        {
-            rotate_both(stack_a, stack_b, 1, TRUE);
-            continue;
-        }
-        if (is_node_above_median(temp_b, stack_b->size)
-            && is_node_above_median(temp_a, stack_a->size))
-        {
-            rotate_both(stack_a, stack_b, -1, TRUE);
-            continue;
-        }
-
-        // Case 2: Rotate stack_b to bring temp_b to the top
-        if (temp_b->index != 0)
-        {
-            if (!is_node_above_median(temp_b, stack_b->size))
-                rotate(stack_b, 1, TRUE);
-            else
-                rotate(stack_b, -1, TRUE);
-        }
-
-        // Case 3: Rotate stack_a to bring temp_a to the top
-        if (temp_a->index != 0)
-        {
-            if (!is_node_above_median(temp_a, stack_a->size))
-                rotate(stack_a, 1, TRUE);
-            else
-                rotate(stack_a, -1, TRUE);
-        }
-    }
+	temp_b = node_with_best_cost(stack_b);
+	temp_a = temp_b->target_node;
+	while (temp_a->index != 0 || temp_b->index != 0)
+	{
+		// Case 1: Rotate both stacks together if beneficial
+		if (!is_node_above_median(temp_b, stack_b->size)
+			&& !is_node_above_median(temp_a, stack_a->size))
+		{
+			rotate_both(stack_a, stack_b, 1, TRUE);
+			continue;
+		}
+		if (is_node_above_median(temp_b, stack_b->size)
+			&& is_node_above_median(temp_a, stack_a->size))
+		{
+			rotate_both(stack_a, stack_b, -1, TRUE);
+			continue;
+		}
+		// Case 2: Rotate stack_b to bring temp_b to the top
+		if (temp_b->index != 0)
+		{
+			if (!is_node_above_median(temp_b, stack_b->size))
+				rotate(stack_b, 1, TRUE);
+			else
+				rotate(stack_b, -1, TRUE);
+		}
+		// Case 3: Rotate stack_a to bring temp_a to the top
+		if (temp_a->index != 0)
+		{
+			if (!is_node_above_median(temp_a, stack_a->size))
+				rotate(stack_a, 1, TRUE);
+			else
+				rotate(stack_a, -1, TRUE);
+		}
+	}
 }
 
 void	rotate_sorted_stack_a(t_dll *stack_a)
@@ -144,15 +142,14 @@ void	rotate_sorted_stack_a(t_dll *stack_a)
 	t_node	*smallest_node;
 
 	smallest_node = find_smallest_node(stack_a);
-    if (smallest_node->index <= stack_a->size / 2)
-    {
-        while (stack_a->head != smallest_node)
-            rotate(stack_a, 1, TRUE);
-    }
-    else
-    {
-        while (stack_a->head != smallest_node)
-            rotate(stack_a, -1, TRUE);
-    }
+	if (smallest_node->index <= stack_a->size / 2)
+	{
+		while (stack_a->head != smallest_node)
+			rotate(stack_a, 1, TRUE);
+	}
+	else
+	{
+		while (stack_a->head != smallest_node)
+			rotate(stack_a, -1, TRUE);
+	}
 }
-

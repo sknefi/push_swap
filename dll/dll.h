@@ -17,7 +17,7 @@ typedef struct Node
 	int				index;
 	struct Node		*next;
 	struct Node		*prev;
-	struct Node		*target_node; // toto mozno musim ostranit ak sa rozhodne pre t_target_nodes
+	struct Node		*target_node;
 }	t_node;
 
 // 

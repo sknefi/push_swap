@@ -28,11 +28,10 @@ static void	node_info_print(t_node *node)
 	else
 		ft_printf("| t:       (nil) |\n");
 	if (0 <= node->cost && node->cost <= 9)
-			ft_printf("| cost:     [0%d] |\n", node->cost);
-		else
-			ft_printf("| cost:     [%d] |\n", node->cost);
+		ft_printf("| cost:     [0%d] |\n", node->cost);
+	else
+		ft_printf("| cost:     [%d] |\n", node->cost);
 	ft_printf("==================\n\\     |  |    /\n");
-
 }
 
 /**

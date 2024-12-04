@@ -22,7 +22,7 @@ static t_node	*unlink_first_node(t_dll *dll)
 	unlinked_node = dll->head;
 	first_node = dll->head->next;
 	unlinked_node->next = NULL;
-	if (first_node) // there could be single node on stack
+	if (first_node)
 		first_node->prev = NULL;
 	dll->head = first_node;
 	dll->size--;
@@ -44,7 +44,7 @@ void	push(t_dll *dest_dll, t_dll *src_dll, int print_flag)
 	t_node	*unlinked_node;
 
 	unlinked_node = unlink_first_node(src_dll);
-	if (unlinked_node) // Node was successfuly removed from $src_dll
+	if (unlinked_node)
 		dll_prepend(dest_dll, unlinked_node);
 	if (print_flag)
 		ft_printf("p%c\n", dest_dll->name);

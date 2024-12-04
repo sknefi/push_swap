@@ -9,9 +9,9 @@
 # define FALSE 0
 
 // UTILS
-int	is_node_above_median(t_node *node, int size_of_stack);
-int	ft_abs(int x);
-int	ft_max(int x, int y);
+int		is_node_above_median(t_node *node, int size_of_stack);
+int		ft_abs(int x);
+int		ft_max(int x, int y);
 t_node	*node_with_best_cost(t_dll *stack_b);
 t_node	*find_smallest_node(t_dll *stack);
 

@@ -45,7 +45,7 @@ t_node	*get_node_from_index(t_dll *dll, int index)
 			return (temp);
 		temp = temp->next;
 	}
-	return (NULL); // but this shouldnt happen in this algorithm handle_rotate
+	return (NULL);
 }
 
 /**
