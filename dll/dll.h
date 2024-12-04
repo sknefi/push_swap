@@ -37,8 +37,8 @@ typedef struct dll
 	t_node	*tail;
 }	t_dll;
 
-t_dll	*dll_init(void);
-t_dll	*dll_create(char **argv);
+t_dll	*dll_init(char name);
+t_dll	*dll_create(char **argv, char name);
 void	*dll_append(t_dll *dll, t_node *new_node);
 void	*dll_prepend(t_dll *dll, t_node *new_node);
 void	dll_clear(t_dll *dll);

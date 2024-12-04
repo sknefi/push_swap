@@ -8,7 +8,7 @@ static void	fast_sort(t_dll *stack_a, int sort_type)
 		sort_elements_3(stack_a);
 }
 
-static int	is_already_sorted(t_dll *stack_a)
+int	is_already_sorted(t_dll *stack_a)
 {
 	t_node	*node;
 

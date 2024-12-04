@@ -22,6 +22,7 @@ void	calc_costs(t_dll *stack_a, t_dll *stack_b);
 t_node	*node_with_best_cost(t_dll *stack_b);
 void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b);
 void	rotate_sorted_stack_a(t_dll *stack_a);
+int		is_already_sorted(t_dll *stack_a);
 
 // FAST SORTS
 void	sort_elements_2(t_dll *stack_a);
@@ -32,6 +33,9 @@ t_node	*get_biggest_val_node(t_dll *stack);
 
 // ALGO
 void	push_swap(t_dll *stack_a, t_dll *stack_b);
+
+// CHECKER UTILS
+void	extract_newline(char *line);
 
 // TESTS
 void	test1(int argc, char *argv[]);
