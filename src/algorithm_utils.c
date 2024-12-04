@@ -10,7 +10,7 @@
 void	prepare_stack_a(t_dll *stack_a, t_dll *stack_b)
 {
 	while (stack_a->size > 3)
-		push(stack_b, stack_a);
+		push(stack_b, stack_a, TRUE);
 }
 
 /**
@@ -109,13 +109,13 @@ void handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
         if (!is_node_above_median(temp_b, stack_b->size)
             && !is_node_above_median(temp_a, stack_a->size))
         {
-            rotate_both(stack_a, stack_b, 1);
+            rotate_both(stack_a, stack_b, 1, TRUE);
             continue;
         }
         if (is_node_above_median(temp_b, stack_b->size)
             && is_node_above_median(temp_a, stack_a->size))
         {
-            rotate_both(stack_a, stack_b, -1);
+            rotate_both(stack_a, stack_b, -1, TRUE);
             continue;
         }
 

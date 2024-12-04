@@ -8,10 +8,12 @@ static void	fast_sort(t_dll *stack_a, int sort_type)
 		sort_elements_3(stack_a);
 }
 
-int	is_already_sorted(t_dll *stack_a)
+int	is_already_sorted(t_dll *stack_a, t_dll *stack_b)
 {
 	t_node	*node;
 
+	if (stack_b->size > 0)
+		return (0);
 	node = stack_a->head;
 	while (node->next)
 	{
@@ -29,7 +31,7 @@ void	push_swap(t_dll *stack_a, t_dll *stack_b)
 		fast_sort(stack_a, stack_a->size);
 		return ;
 	}
-	if (is_already_sorted(stack_a))
+	if (is_already_sorted(stack_a, stack_b))
 		return ;
 	prepare_stack_a(stack_a, stack_b);
 	sort_elements_3(stack_a);
@@ -38,7 +40,7 @@ void	push_swap(t_dll *stack_a, t_dll *stack_b)
 		create_target_nodes(stack_a, stack_b);
 		calc_costs(stack_a, stack_b);
 		handle_rotate_a_b(stack_a, stack_b);
-		push(stack_a, stack_b);
+		push(stack_a, stack_b, TRUE);
 	}
 	rotate(stack_a, find_smallest_node(stack_a)->index, TRUE);
 }

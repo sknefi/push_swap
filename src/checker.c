@@ -3,27 +3,27 @@
 void	operation_handler(char *op, t_dll *stack_a, t_dll *stack_b)
 {
 	if ((ft_strncmp(op, "sa", 3)) == 0)
-		swap(stack_a, TRUE);
+		swap(stack_a, FALSE);
 	else if (ft_strncmp(op, "sb", 3) == 0)
-		swap(stack_b, TRUE);
+		swap(stack_b, FALSE);
 	else if (ft_strncmp(op, "ss", 3) == 0)
-		swap_both(stack_a, stack_b);
+		swap_both(stack_a, stack_b, FALSE);
 	else if (ft_strncmp(op, "pa", 3) == 0)
-		push(stack_a, stack_b);
+		push(stack_a, stack_b, FALSE);
 	else if (ft_strncmp(op, "pb", 3) == 0)
-		push(stack_b, stack_a);
+		push(stack_b, stack_a, FALSE);
 	else if (ft_strncmp(op, "ra", 3) == 0)
-		rotate(stack_a, 1, TRUE);
+		rotate(stack_a, 1, FALSE);
 	else if (ft_strncmp(op, "rb", 3) == 0)
-		rotate(stack_b, 1, TRUE);
+		rotate(stack_b, 1, FALSE);
 	else if (ft_strncmp(op, "rr", 3) == 0)
-		rotate_both(stack_a, stack_b, 1);
+		rotate_both(stack_a, stack_b, 1, FALSE);
 	else if (ft_strncmp(op, "rra", 4) == 0)
-		rotate(stack_a, -1, TRUE);
+		rotate(stack_a, -1, FALSE);
 	else if (ft_strncmp(op, "rrb", 4) == 0)
-		rotate(stack_b, -1, TRUE);
+		rotate(stack_b, -1, FALSE);
 	else if (ft_strncmp(op, "rrr", 4) == 0)
-		rotate_both(stack_a, stack_b, -1);
+		rotate_both(stack_a, stack_b, -1, FALSE);
 }
 
 int	main(int argc, char *argv[])
@@ -39,7 +39,7 @@ int	main(int argc, char *argv[])
 	{
 		if (line[0] == '\n' && line[1] == '\0')
 		{
-			if (is_already_sorted(stack_a))
+			if (is_already_sorted(stack_a, stack_b))
 				ft_printf("OK\n");
 			else
 				ft_printf("KO\n");

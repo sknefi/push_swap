@@ -39,12 +39,13 @@ static t_node	*unlink_first_node(t_dll *dll)
  * @param dest_dll Pointer to `dest_dll` struct
  * @param src_dll Pointer to `src_dll` struct
 */
-void	push(t_dll *dest_dll, t_dll *src_dll)
+void	push(t_dll *dest_dll, t_dll *src_dll, int print_flag)
 {
 	t_node	*unlinked_node;
 
 	unlinked_node = unlink_first_node(src_dll);
 	if (unlinked_node) // Node was successfuly removed from $src_dll
 		dll_prepend(dest_dll, unlinked_node);
-	ft_printf("p%c\n", dest_dll->name);
+	if (print_flag)
+		ft_printf("p%c\n", dest_dll->name);
 }

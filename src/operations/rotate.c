@@ -104,12 +104,15 @@ void	rotate(t_dll *dll, int offset, int print_flag)
  * @param offset How many rotations `(rx/rrx)` we should do in a row
  * on both stacks
 */
-void	rotate_both(t_dll *dll1, t_dll *dll2, int offset)
+void	rotate_both(t_dll *dll1, t_dll *dll2, int offset, int print_flag)
 {
 	rotate(dll1, offset, FALSE);
 	rotate(dll2, offset, FALSE);
-	if (offset > 0)
-		ft_printf("rr\n");
-	else
-		ft_printf("rrr\n");
+	if (print_flag)
+	{
+		if (offset > 0)
+			ft_printf("rr\n");
+		else
+			ft_printf("rrr\n");
+	}
 }

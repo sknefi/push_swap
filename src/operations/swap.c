@@ -40,9 +40,10 @@ void	swap(t_dll *dll, int print_flag)
  * @param dll1 Stack a
  * @param dll2 Stack b
 */
-void	swap_both(t_dll *dll1, t_dll *dll2)
+void	swap_both(t_dll *dll1, t_dll *dll2, int print_flag)
 {
 	swap(dll1, FALSE);
 	swap(dll2, FALSE);
-	ft_printf("ss\n");
+	if (print_flag)
+		ft_printf("ss\n");
 }

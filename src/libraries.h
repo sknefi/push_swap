@@ -22,7 +22,7 @@ void	calc_costs(t_dll *stack_a, t_dll *stack_b);
 t_node	*node_with_best_cost(t_dll *stack_b);
 void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b);
 void	rotate_sorted_stack_a(t_dll *stack_a);
-int		is_already_sorted(t_dll *stack_a);
+int		is_already_sorted(t_dll *stack_a, t_dll *stack_b);
 
 // FAST SORTS
 void	sort_elements_2(t_dll *stack_a);
