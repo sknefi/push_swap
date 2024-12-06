@@ -17,6 +17,6 @@ int	main(int argc, char *argv[])
 	push_swap(stack_a, stack_b);
 	// dll_printer(stack_a);
 	// dll_printer(stack_b);
-	ft_printf("%d\n", is_already_sorted(stack_a, stack_b));
+	// ft_printf("%d\n", is_stack_sorted(stack_a, stack_b));
 	return (EXIT_SUCCESS);
 }

@@ -1,14 +1,6 @@
 #include "libraries.h"
 
-static void	fast_sort(t_dll *stack_a, int sort_type)
-{
-	if (sort_type == 2)
-		sort_elements_2(stack_a);
-	else if (sort_type == 3)
-		sort_elements_3(stack_a);
-}
-
-int	is_already_sorted(t_dll *stack_a, t_dll *stack_b)
+int	is_stack_sorted(t_dll *stack_a, t_dll *stack_b)
 {
 	t_node	*node;
 
@@ -26,13 +18,13 @@ int	is_already_sorted(t_dll *stack_a, t_dll *stack_b)
 
 void	push_swap(t_dll *stack_a, t_dll *stack_b)
 {
+	if (is_stack_sorted(stack_a, stack_b))
+		return ;
 	if (stack_a->size <= 3)
 	{
 		fast_sort(stack_a, stack_a->size);
 		return ;
 	}
-	if (is_already_sorted(stack_a, stack_b))
-		return ;
 	prepare_stack_a(stack_a, stack_b);
 	sort_elements_3(stack_a);
 	while (stack_b->size > 0)

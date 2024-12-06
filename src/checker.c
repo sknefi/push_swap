@@ -34,7 +34,6 @@ static void	operation_handler(char *op, t_dll *stack_a, t_dll *stack_b)
 		checker_error();
 }
 
-
 int	main(int argc, char *argv[])
 {
 	char	*line;
@@ -44,13 +43,12 @@ int	main(int argc, char *argv[])
 	(void)argc;
 	stack_a = dll_create(argv, 'a');
 	stack_b = dll_init('b');
-
 	while (1)
 	{
 		line = get_next_line(STDIN_FILENO);
 		if (line == NULL)
 		{
-			if (is_already_sorted(stack_a, stack_b))
+			if (is_stack_sorted(stack_a, stack_b))
 				ft_printf("OK\n");
 			else
 				ft_printf("KO\n");

@@ -15,18 +15,23 @@ int		ft_max(int x, int y);
 t_node	*node_with_best_cost(t_dll *stack_b);
 t_node	*find_smallest_node(t_dll *stack);
 
-// ALGO UTILS
+// ALGO COMPONENTS
 void	create_target_nodes(t_dll *stack_a, t_dll *stack_b);
 void	prepare_stack_a(t_dll *stack_a, t_dll *stack_b);
 void	calc_costs(t_dll *stack_a, t_dll *stack_b);
 t_node	*node_with_best_cost(t_dll *stack_b);
 void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b);
 void	rotate_sorted_stack_a(t_dll *stack_a);
-int		is_already_sorted(t_dll *stack_a, t_dll *stack_b);
+int		is_stack_sorted(t_dll *stack_a, t_dll *stack_b);
+
+// ALGO UTILS
+void	handle_calc_cost_under_median(t_node *temp_a,
+			t_node *temp_b, t_dll *stack_a, t_dll *stack_b);
+void	handle_rotate_node(t_node *node, t_dll *stack);
 
 // FAST SORTS
-void	sort_elements_2(t_dll *stack_a);
 void	sort_elements_3(t_dll *stack_a);
+void	fast_sort(t_dll *stack_a, int sort_type);
 
 // FAST SORTS UTILS
 t_node	*get_biggest_val_node(t_dll *stack);
@@ -36,14 +41,5 @@ void	push_swap(t_dll *stack_a, t_dll *stack_b);
 
 // CHECKER UTILS
 void	extract_newline(char *line);
-
-// TESTS
-void	test1(int argc, char *argv[]);
-void	test2(int argc, char *argv[]);
-void	test3(int argc, char *argv[]);
-void	test4(int argc, char *argv[]);
-void	test5(int argc, char *argv[]);
-
-void	test21(int argc, char *argv[]);
 
 #endif // LIBRARIES_H

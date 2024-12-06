@@ -8,6 +8,7 @@ SRCS		=	./src/main.c \
 				./src/operations/rotate.c \
 				./src/utils.c \
 				./src/algorithm.c \
+				./src/algorithm_components.c \
 				./src/algorithm_utils.c \
 				./src/fast_sorts/fast_sort.c \
 				./src/fast_sorts/fast_sort_utils.c \
@@ -20,6 +21,7 @@ CHECKER_SRCS	=	./src/checker.c \
 					./src/operations/rotate.c \
 					./src/utils.c \
 					./src/algorithm.c \
+					./src/algorithm_components.c \
 					./src/algorithm_utils.c \
 					./src/fast_sorts/fast_sort.c \
 					./src/fast_sorts/fast_sort_utils.c \

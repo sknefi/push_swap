@@ -1,5 +1,19 @@
 #include "dll.h"
 
+static void	print_rest(t_node *node)
+{
+	if (node->target_node)
+	{
+		ft_printf("| t: %p |\n", node->target_node);
+		if (0 <= node->target_node->data && node->target_node->data <= 9)
+			ft_printf("| tVal:     [0%d] |\n", node->target_node->data);
+		else
+			ft_printf("| tVal:     [%d] |\n", node->target_node->data);
+	}
+	else
+		ft_printf("| t:       (nil) |\n");
+}
+
 /**
  * Print info about node
  * @param node Initialized node
@@ -17,21 +31,12 @@ static void	node_info_print(t_node *node)
 	else
 		ft_printf("   [%d] |\n", node->data);
 	ft_printf("|  ~~~~~~~~~~~~  |\n");
-	if (node->target_node)
-	{
-		ft_printf("| t: %p |\n", node->target_node);
-		if (0 <= node->target_node->data && node->target_node->data <= 9)
-			ft_printf("| tVal:     [0%d] |\n", node->target_node->data);
-		else
-			ft_printf("| tVal:     [%d] |\n", node->target_node->data);
-	}
-	else
-		ft_printf("| t:       (nil) |\n");
+	print_rest(node);
 	if (0 <= node->cost && node->cost <= 9)
 		ft_printf("| cost:     [0%d] |\n", node->cost);
 	else
 		ft_printf("| cost:     [%d] |\n", node->cost);
-	ft_printf("==================\n\\     |  |    /\n");
+	ft_printf("==================\n\\      |  |      /\n");
 }
 
 /**
@@ -45,6 +50,6 @@ void	dll_printer(t_dll *dll)
 		ft_printf("/       |  |     \\\n");
 	dll_iteri(dll, node_info_print);
 	if (dll->head != NULL && dll->tail != NULL)
-		ft_printf("        NULL     ");
+		ft_printf("       NULL     ");
 	printf("\n\n");
 }
