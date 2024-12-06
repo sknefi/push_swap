@@ -43,7 +43,7 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		return (EXIT_FAILURE);
 	(void)argc;
-	stack_a = dll_create(argv, 'a');
+	stack_a = dll_create(argv + 1, 'a');
 	check_for_errors(stack_a);
 	stack_b = dll_init('b');
 	while (1)

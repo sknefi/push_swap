@@ -42,6 +42,12 @@ int	ft_atoi(const char *str)
 	return (res * neg);
 }
 
+/**
+ * Better version of ft_atoi with error checking (-1 if error, 1 if success)
+ * @param str String to convert to integer
+ * @param check_flag Pointer to integer to check if conversion was successful
+ * @return Converted integer
+*/
 int	ft_atoii(const char *str, int *check_flag)
 {
 	int			i;

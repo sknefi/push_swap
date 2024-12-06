@@ -1,9 +1,6 @@
 NEED
-4. check for duplicates
-5. >MAXINT error
-5. pouzit CHECKER a otestovat pocet operacii 
-6. norminette
 7. vyriesit memoryleaks keby sa daco pokazilo
+8. pridat $ARG     
 
 DONE
 1. spravit operacia na dll
@@ -18,3 +15,7 @@ DONE
 	III.	calc_costs
 	IV.		handle_rotate_a_b (nájdi najlacnejší node, a dostaň ho na TOP spolu s jeho target nodeom)
 	V.		push a <- b
+4. check for duplicates
+5. >MAXINT error
+5. pouzit CHECKER a otestovat pocet operacii 
+6. norminette

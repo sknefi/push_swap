@@ -52,7 +52,7 @@ t_dll	*dll_create(char **argv, char name)
 	t_dll	*dll;
 
 	dll = dll_init(name);
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
 		check_flag = 0;
