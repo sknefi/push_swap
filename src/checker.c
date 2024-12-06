@@ -37,13 +37,18 @@ static void	operation_handler(char *op, t_dll *stack_a, t_dll *stack_b)
 int	main(int argc, char *argv[])
 {
 	char	*line;
+	char	**values;
 	t_dll	*stack_a;
 	t_dll	*stack_b;
 
 	if (argc < 2)
 		return (EXIT_FAILURE);
 	(void)argc;
-	stack_a = dll_create(argv + 1, 'a');
+	if (argc == 2)
+		values = ft_split(argv[1], ' ');
+	else
+		values = argv + 1;
+	stack_a = dll_create(values, 'a');
 	check_for_errors(stack_a);
 	stack_b = dll_init('b');
 	while (1)

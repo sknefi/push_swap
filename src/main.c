@@ -18,6 +18,5 @@ int	main(int argc, char *argv[])
 	check_for_errors(stack_a);
 	stack_b = dll_init('b');
 	push_swap(stack_a, stack_b);
-	// res_is_stack_sorted(stack_a, stack_b);
 	return (EXIT_SUCCESS);
 }
