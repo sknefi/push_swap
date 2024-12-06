@@ -34,6 +34,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_atoi(const char *str);
+int		ft_atoii(const char *str, int *check_flag);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -71,5 +72,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*get_next_line(int fd);
 int		ft_printf(const char *str, ...);
 void	ft_error(char *str);
+void	ft_error_basic(void);
 
 #endif

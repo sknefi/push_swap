@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -37,4 +40,37 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (res * neg);
+}
+
+int	ft_atoii(const char *str, int *check_flag)
+{
+	int			i;
+	int			neg;
+	long		res;
+
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+	{
+		i++;
+	}
+	if (str[i] == '-')
+		neg = -1;
+	else
+		neg = 1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	res = 0;
+	while (ft_isdigit(str[i]))
+	{
+		res = (res * 10) + (str[i] - '0');
+		if ((res * neg) > INT_MAX || (res * neg) < INT_MIN)
+		{
+			*check_flag = -1;
+			return (0);
+		}
+		i++;
+	}
+	*check_flag = 1;
+	return ((int)res * neg);
 }

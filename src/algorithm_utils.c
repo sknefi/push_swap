@@ -20,3 +20,11 @@ void	handle_rotate_node(t_node *node, t_dll *stack)
 	else
 		rotate(stack, -1, TRUE);
 }
+
+void	res_is_stack_sorted(t_dll *stack_a, t_dll *stack_b)
+{
+	if (is_stack_sorted(stack_a, stack_b))
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+}

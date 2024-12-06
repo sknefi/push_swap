@@ -12,6 +12,7 @@ SRCS		=	./src/main.c \
 				./src/algorithm_utils.c \
 				./src/fast_sorts/fast_sort.c \
 				./src/fast_sorts/fast_sort_utils.c \
+				./src/error_checker_ps.c \
 
 CHECKER_SRCS	=	./src/checker.c \
 					./src/checker_utils.c \
@@ -25,6 +26,7 @@ CHECKER_SRCS	=	./src/checker.c \
 					./src/algorithm_utils.c \
 					./src/fast_sorts/fast_sort.c \
 					./src/fast_sorts/fast_sort_utils.c \
+					./src/error_checker_ps.c \
 
 OBJS		=	$(SRCS:.c=.o)
 CHECKER_OBJS=	$(CHECKER_SRCS:.c=.o)

@@ -47,6 +47,7 @@ static t_node	*init_node(int data)
 t_dll	*dll_create(char **argv, char name)
 {
 	int		i;
+	int		check_flag;
 	t_node	*new_node;
 	t_dll	*dll;
 
@@ -54,12 +55,18 @@ t_dll	*dll_create(char **argv, char name)
 	i = 1;
 	while (argv[i])
 	{
+		check_flag = 0;
 		if (!ft_isnumber(argv[i]))
 		{
-			ft_printf("Error\n");
-			exit(EXIT_FAILURE);
+			// DEALOC
+			ft_error_basic();
 		}
-		new_node = init_node(ft_atoi(argv[i]));
+		new_node = init_node(ft_atoii(argv[i], &check_flag));
+		if (check_flag == -1)
+		{
+			// DEALOC
+			ft_error_basic();
+		}
 		dll_append(dll, new_node);
 		i++;
 	}

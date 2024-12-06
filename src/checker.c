@@ -40,18 +40,18 @@ int	main(int argc, char *argv[])
 	t_dll	*stack_a;
 	t_dll	*stack_b;
 
+	if (argc < 2)
+		return (EXIT_FAILURE);
 	(void)argc;
 	stack_a = dll_create(argv, 'a');
+	check_for_errors(stack_a);
 	stack_b = dll_init('b');
 	while (1)
 	{
 		line = get_next_line(STDIN_FILENO);
 		if (line == NULL)
 		{
-			if (is_stack_sorted(stack_a, stack_b))
-				ft_printf("OK\n");
-			else
-				ft_printf("KO\n");
+			res_is_stack_sorted(stack_a, stack_b);
 			break ;
 		}
 		extract_newline(line);

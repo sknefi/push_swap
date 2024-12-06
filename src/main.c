@@ -10,6 +10,7 @@ int	main(int argc, char *argv[])
 		return (EXIT_FAILURE);
 	(void)argc;
 	stack_a = dll_create(argv, 'a');
+	check_for_errors(stack_a);
 	stack_b = dll_init('b');
 	// dll_printer(stack_a);
 	// dll_printer(stack_b);
@@ -17,6 +18,6 @@ int	main(int argc, char *argv[])
 	push_swap(stack_a, stack_b);
 	// dll_printer(stack_a);
 	// dll_printer(stack_b);
-	// ft_printf("%d\n", is_stack_sorted(stack_a, stack_b));
+	res_is_stack_sorted(stack_a, stack_b);
 	return (EXIT_SUCCESS);
 }

@@ -28,6 +28,7 @@ int		is_stack_sorted(t_dll *stack_a, t_dll *stack_b);
 void	handle_calc_cost_under_median(t_node *temp_a,
 			t_node *temp_b, t_dll *stack_a, t_dll *stack_b);
 void	handle_rotate_node(t_node *node, t_dll *stack);
+void	res_is_stack_sorted(t_dll *stack_a, t_dll *stack_b);
 
 // FAST SORTS
 void	sort_elements_3(t_dll *stack_a);
@@ -41,5 +42,8 @@ void	push_swap(t_dll *stack_a, t_dll *stack_b);
 
 // CHECKER UTILS
 void	extract_newline(char *line);
+
+// ERROR HANDLER
+void	check_for_errors(t_dll *stack_a);
 
 #endif // LIBRARIES_H
