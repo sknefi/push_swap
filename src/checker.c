@@ -1,11 +1,5 @@
 #include "libraries.h"
 
-static void	checker_error(void)
-{
-	ft_printf("Error\n");
-	exit(EXIT_FAILURE);
-}
-
 static void	operation_handler(char *op, t_dll *stack_a, t_dll *stack_b)
 {
 	if ((ft_strncmp(op, "sa", 3)) == 0)
@@ -31,7 +25,7 @@ static void	operation_handler(char *op, t_dll *stack_a, t_dll *stack_b)
 	else if (ft_strncmp(op, "rrr", 4) == 0)
 		rotate_both(stack_a, stack_b, -1, FALSE);
 	else
-		checker_error();
+		ft_error_basic();
 }
 
 int	main(int argc, char *argv[])
@@ -43,9 +37,11 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 		return (EXIT_FAILURE);
-	(void)argc;
 	if (argc == 2)
-		values = ft_split(argv[1], ' ');
+	{
+		check_for_separators_only(argv[1]);
+		values = ft_split(argv[1], SEPARATOR);
+	}
 	else
 		values = argv + 1;
 	stack_a = dll_create(values, 'a');
@@ -56,7 +52,9 @@ int	main(int argc, char *argv[])
 		line = get_next_line(STDIN_FILENO);
 		if (line == NULL)
 		{
+			rotate(stack_a, find_smallest_node(stack_a)->index, FALSE);
 			res_is_stack_sorted(stack_a, stack_b);
+			free(line);
 			break ;
 		}
 		extract_newline(line);

@@ -9,9 +9,11 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 		return (EXIT_FAILURE);
-	(void)argc;
 	if (argc == 2)
-		values = ft_split(argv[1], ' ');
+	{
+		check_for_separators_only(argv[1]);
+		values = ft_split(argv[1], SEPARATOR);
+	}
 	else
 		values = argv + 1;
 	stack_a = dll_create(values, 'a');

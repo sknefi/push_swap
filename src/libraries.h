@@ -7,6 +7,7 @@
 
 # define TRUE 1
 # define FALSE 0
+# define SEPARATOR ' '
 
 // UTILS
 int		is_node_above_median(t_node *node, int size_of_stack);
@@ -45,5 +46,6 @@ void	extract_newline(char *line);
 
 // ERROR HANDLER
 void	check_for_errors(t_dll *stack_a);
+void	check_for_separators_only(char *str_2args);
 
 #endif // LIBRARIES_H

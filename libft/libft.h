@@ -73,5 +73,7 @@ char	*get_next_line(int fd);
 int		ft_printf(const char *str, ...);
 void	ft_error(char *str);
 void	ft_error_basic(void);
+int		ft_isnumber(char *str);
+
 
 #endif
