@@ -66,7 +66,6 @@ int	main(int argc, char *argv[])
 		line = get_next_line(STDIN_FILENO);
 		if (line == NULL)
 		{
-			rotate(a, find_smallest_node(a)->index, FALSE);
 			res_is_stack_sorted(a, b);
 			free(line);
 			break ;

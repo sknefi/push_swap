@@ -34,5 +34,5 @@ void	push_swap(t_dll *stack_a, t_dll *stack_b)
 		handle_rotate_a_b(stack_a, stack_b);
 		push(stack_a, stack_b, TRUE);
 	}
-	rotate(stack_a, find_smallest_node(stack_a)->index, TRUE);
+	rotate_min_on_top(stack_a);
 }

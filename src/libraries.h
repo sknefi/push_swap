@@ -30,6 +30,7 @@ void	handle_calc_cost_under_median(t_node *temp_a,
 			t_node *temp_b, t_dll *stack_a, t_dll *stack_b);
 void	handle_rotate_node(t_node *node, t_dll *stack);
 void	res_is_stack_sorted(t_dll *stack_a, t_dll *stack_b);
+void	rotate_min_on_top(t_dll *stack_a);
 
 // FAST SORTS
 void	sort_elements_3(t_dll *stack_a);
