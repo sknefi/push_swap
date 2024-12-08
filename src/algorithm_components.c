@@ -129,7 +129,6 @@ void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
 	}
 }
 
-
 /**
  * Rotate `stack a` to sort it
  * 

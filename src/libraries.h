@@ -49,6 +49,7 @@ void	extract_newline(char *line);
 // ERROR HANDLER
 void	*check_for_errors(t_dll *stack_a);
 void	*check_for_separators_only(char *str_2args);
+void	*check_for_duplicates(t_dll *stack_a);
 
 // HANDLERS
 char	**handle_2args(char *str_2args);

@@ -4,7 +4,7 @@
  * @brief Check for duplicates in the stack
  * @param stack_a The stack to check for duplicates
  */
-static void	*check_for_duplitcates(t_dll *stack_a)
+void	*check_for_duplicates(t_dll *stack_a)
 {
 	t_node	*node;
 	t_node	*temp;
@@ -62,5 +62,5 @@ char	**handle_2args(char *str_2args)
 */
 void	*check_for_errors(t_dll *stack_a)
 {
-	return (check_for_duplitcates(stack_a));
+	return (check_for_duplicates(stack_a));
 }

@@ -1,5 +1,6 @@
 NEED
 8. vyriesit TLE, sort s 0, fast_sort_5
+9. main je opraveny, este opravit checker
     
 DONE
 1. spravit operacia na dll

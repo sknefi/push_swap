@@ -1,16 +1,33 @@
 #include <stdio.h>
 #include "libraries.h"
 
-// t_dll	*create_stack_a(char **values, int dynamic_alloc)
-// {
-// 	t_dll	*stack_a;
+static t_dll	*create_stack_a(char **values, int dynamic_alloc)
+{
+	t_dll	*stack_a;
 
-// 	stack_a = dll_create(values, 'a');
-// 	if (dynamic_alloc)
-// 		free_split(values);
-// 	if (!stack_a)
-// 		return (ft_error_basic(), EXIT_FAILURE);
-// }
+	stack_a = dll_create(values, 'a');
+	if (dynamic_alloc)
+		free_split(values);
+	if (!stack_a)
+		ft_error_basic();
+	if (!check_for_duplicates(stack_a))
+		ft_error_basic();
+	return (stack_a);
+}
+
+static t_dll	*create_stack_b(t_dll *stack_a)
+{
+	t_dll	*stack_b;
+
+	stack_b = dll_init('b');
+	if (!stack_b)
+	{
+		dll_clear(stack_a);
+		free(stack_a);
+		ft_error_basic();
+	}
+	return (stack_b);
+}
 
 int	main(int argc, char *argv[])
 {
@@ -34,21 +51,8 @@ int	main(int argc, char *argv[])
 	}
 	if (!values)
 		ft_error_basic();
-	a = dll_create(values, 'a');
-	if (dynamic_alloc)
-		free_split(values);
-	if (!a)
-		return (ft_error_basic(), EXIT_FAILURE);
-	if (!check_for_errors(a))
-		return (ft_error_basic(), EXIT_FAILURE);
-	b = dll_init('b');
-	if (!b)
-		return (dll_clear(a), free(a), ft_error_basic(), EXIT_FAILURE);
+	a = create_stack_a(values, dynamic_alloc);
+	b = create_stack_b(a);
 	push_swap(a, b);
-
-	dll_clear(a);
-	dll_clear(b);
-	free(a);
-	free(b);
-	return (EXIT_SUCCESS);
+	return (free_complete_stacks(a, b), EXIT_SUCCESS);
 }
