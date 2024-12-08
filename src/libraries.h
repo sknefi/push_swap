@@ -34,10 +34,11 @@ void	rotate_min_on_top(t_dll *stack_a);
 
 // FAST SORTS
 void	sort_elements_3(t_dll *stack_a);
-void	fast_sort(t_dll *stack_a, int sort_type);
+void	fast_sort(t_dll *stack_a, t_dll *stack_b);
 
 // FAST SORTS UTILS
 t_node	*get_biggest_val_node(t_dll *stack);
+void	put_smallest_node_on_top(t_dll *stack_a);
 
 // ALGO
 void	push_swap(t_dll *stack_a, t_dll *stack_b);
@@ -51,5 +52,9 @@ void	*check_for_separators_only(char *str_2args);
 
 // HANDLERS
 char	**handle_2args(char *str_2args);
+
+// FREE MEMORY
+void	free_complete_stacks(t_dll *stack_a, t_dll *stack_b);
+void	free_stack_a(t_dll *stack_a);
 
 #endif // LIBRARIES_H

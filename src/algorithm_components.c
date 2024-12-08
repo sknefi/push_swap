@@ -90,6 +90,17 @@ void	calc_costs(t_dll *stack_a, t_dll *stack_b)
 	}
 }
 
+/**
+ * Handle the rotation of `stack a` and `stack b` based on
+ * the cost of `temp_a` and `temp_b`
+ * 
+ * If `temp_a` and `temp_b` are above median, rotate both
+ * If `temp_a` and `temp_b` are below median, reverse rotate both
+ * If `temp_a` is above median and `temp_b` is below median, rotate `temp_b`
+ * If `temp_a` is below median and `temp_b` is above median, rotate `temp_a`
+ * @param stack_a Stack a
+ * @param stack_b Stack b
+*/
 void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
 {
 	int		temp_a_index;
@@ -118,6 +129,13 @@ void	handle_rotate_a_b(t_dll *stack_a, t_dll *stack_b)
 	}
 }
 
+
+/**
+ * Rotate `stack a` to sort it
+ * 
+ * Rotate `stack a` to sort it
+ * @param stack_a Stack a
+*/
 void	rotate_sorted_stack_a(t_dll *stack_a)
 {
 	t_node	*smallest_node;

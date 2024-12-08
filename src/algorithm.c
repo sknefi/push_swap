@@ -9,7 +9,7 @@ int	is_stack_sorted(t_dll *stack_a, t_dll *stack_b)
 	node = stack_a->head;
 	while (node->next)
 	{
-		if (node->next->data && node->data > node->next->data)
+		if (node->data > node->next->data)
 			return (0);
 		node = node->next;
 	}
@@ -20,9 +20,9 @@ void	push_swap(t_dll *stack_a, t_dll *stack_b)
 {
 	if (is_stack_sorted(stack_a, stack_b))
 		return ;
-	if (stack_a->size <= 3)
+	if (stack_a->size <= 3 || stack_a->size == 5)
 	{
-		fast_sort(stack_a, stack_a->size);
+		fast_sort(stack_a, stack_b);
 		return ;
 	}
 	prepare_stack_a(stack_a, stack_b);

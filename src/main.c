@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include "libraries.h"
 
+// t_dll	*create_stack_a(char **values, int dynamic_alloc)
+// {
+// 	t_dll	*stack_a;
+
+// 	stack_a = dll_create(values, 'a');
+// 	if (dynamic_alloc)
+// 		free_split(values);
+// 	if (!stack_a)
+// 		return (ft_error_basic(), EXIT_FAILURE);
+// }
+
 int	main(int argc, char *argv[])
 {
 	int		dynamic_alloc;
@@ -34,7 +45,7 @@ int	main(int argc, char *argv[])
 	if (!b)
 		return (dll_clear(a), free(a), ft_error_basic(), EXIT_FAILURE);
 	push_swap(a, b);
-	
+
 	dll_clear(a);
 	dll_clear(b);
 	free(a);

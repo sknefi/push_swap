@@ -1,5 +1,5 @@
 NEED
-7. vyriesit memoryleaks keby sa daco pokazilo
+8. vyriesit TLE, sort s 0, fast_sort_5
     
 DONE
 1. spravit operacia na dll
@@ -19,3 +19,4 @@ DONE
 5. pouzit CHECKER a otestovat pocet operacii 
 6. norminette
 8. pridat $ARG 
+7. vyriesit memoryleaks keby sa daco pokazilo
