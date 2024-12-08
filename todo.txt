@@ -1,7 +1,6 @@
 NEED
 7. vyriesit memoryleaks keby sa daco pokazilo
-8. pridat $ARG     
-
+    
 DONE
 1. spravit operacia na dll
 3. pridate indexi do Node structu aby sa lahsie urcoval median
@@ -19,3 +18,4 @@ DONE
 5. >MAXINT error
 5. pouzit CHECKER a otestovat pocet operacii 
 6. norminette
+8. pridat $ARG 

@@ -29,26 +29,26 @@ static t_node	*init_node(int data)
 t_dll	*dll_create(char **argv, char name)
 {
 	int		i;
-	int		check_flag;
+	int		num;
+	int		err_flag;
 	t_node	*new_node;
 	t_dll	*dll;
 
 	dll = dll_init(name);
+	if (!dll)
+		return (NULL);
 	i = 0;
 	while (argv[i])
 	{
-		check_flag = 0;
-		if (!ft_isnumber(argv[i]))
-		{
-			// DEALOC
-			ft_error_basic();
-		}
-		new_node = init_node(ft_atoii(argv[i], &check_flag));
-		if (check_flag == -1)
-		{
-			// DEALOC
-			ft_error_basic();
-		}
+		err_flag = 0;
+		if (!ft_isnumber(argv[i])) // check if argv[i] is a number
+			return (dll_clear(dll), free(dll), NULL);
+		num = ft_atoii(argv[i], &err_flag);
+		if (err_flag == -1) // check if argv[i] is in an INT range
+			return (dll_clear(dll), free(dll), NULL);
+		new_node = init_node(num);
+		if (!new_node) // check if malloc failed
+			return (dll_clear(dll), free(dll), NULL);
 		dll_append(dll, new_node);
 		i++;
 	}

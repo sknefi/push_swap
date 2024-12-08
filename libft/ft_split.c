@@ -31,10 +31,20 @@ static unsigned int	get_count_of_words(const char *s, char delimeter)
 	return (count);
 }
 
-void	free_all(char **arr, int w)
+void	free_split_all(char **arr, int w)
 {
 	while (w >= 0)
 		free(arr[w--]);
+	free(arr);
+}
+
+void	free_split(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
 	free(arr);
 }
 
@@ -59,7 +69,7 @@ char	**ft_split(char const *s, char c)
 			word_len++;
 		arr[word_index] = (char *)malloc((word_len + 1) * sizeof(char));
 		if (!arr[word_index])
-			return (free_all(arr, word_index), NULL);
+			return (free_split_all(arr, word_index), NULL);
 		ft_strlcpy(arr[word_index++], &s[i], word_len + 1);
 		i += word_len;
 	}
