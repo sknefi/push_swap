@@ -50,7 +50,6 @@ static void	read_and_execute_operations(t_dll *a, t_dll *b)
 int	main(int argc, char *argv[])
 {
 	int		dynamic_alloc;
-	char	*line;
 	char	**values;
 	t_dll	*a;
 	t_dll	*b;

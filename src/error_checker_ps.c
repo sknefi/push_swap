@@ -31,7 +31,7 @@ void	*check_for_separators_only(char *str_2args)
 	size_t	len_str;
 
 	if (!str_2args)
-		ft_error_basic();
+		ft_error_basic(); // either this or return NULL and end the program
 	len_str = ft_strlen(str_2args);
 	if (len_str == 0)
 		ft_error_basic();

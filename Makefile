@@ -14,6 +14,7 @@ SRCS		=	./src/main.c \
 				./src/fast_sorts/fast_sort_utils.c \
 				./src/error_checker_ps.c \
 				./src/free_memory.c \
+				./src/create_stacks.c \
 
 CHECKER_SRCS	=	./src/checker.c \
 					./src/checker_utils.c \
@@ -29,6 +30,7 @@ CHECKER_SRCS	=	./src/checker.c \
 					./src/fast_sorts/fast_sort_utils.c \
 					./src/error_checker_ps.c \
 					./src/free_memory.c \
+					./src/create_stacks.c \
 
 OBJS		=	$(SRCS:.c=.o)
 CHECKER_OBJS=	$(CHECKER_SRCS:.c=.o)
