@@ -43,7 +43,8 @@ int	ft_atoi(const char *str)
 }
 
 /**
- * Better version of ft_atoi with error checking (-1 if error, 1 if success)
+ * Better version of ft_atoi with error checking 
+ * (-1 if out of range, 1 if success)
  * @param str String to convert to integer
  * @param check_flag Pointer to integer to check if conversion was successful
  * @return Converted integer
@@ -69,13 +70,9 @@ int	ft_atoii(const char *str, int *check_flag)
 	res = 0;
 	while (ft_isdigit(str[i]))
 	{
-		res = (res * 10) + (str[i] - '0');
+		res = (res * 10) + (str[i++] - '0');
 		if ((res * neg) > INT_MAX || (res * neg) < INT_MIN)
-		{
-			*check_flag = -1;
-			return (0);
-		}
-		i++;
+			return (*check_flag = -1, 0);
 	}
 	*check_flag = 1;
 	return ((int)res * neg);

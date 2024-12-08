@@ -41,13 +41,13 @@ t_dll	*dll_create(char **argv, char name)
 	while (argv[i])
 	{
 		err_flag = 0;
-		if (!ft_isnumber(argv[i])) // check if argv[i] is a number
+		if (!ft_isnumber(argv[i]))
 			return (dll_clear(dll), free(dll), NULL);
 		num = ft_atoii(argv[i], &err_flag);
-		if (err_flag == -1) // check if argv[i] is in an INT range
+		if (err_flag == -1)
 			return (dll_clear(dll), free(dll), NULL);
 		new_node = init_node(num);
-		if (!new_node) // check if malloc failed
+		if (!new_node)
 			return (dll_clear(dll), free(dll), NULL);
 		dll_append(dll, new_node);
 		i++;

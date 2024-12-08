@@ -28,6 +28,25 @@ static void	operation_handler(char *op, t_dll *a, t_dll *b)
 		ft_error_basic();
 }
 
+static void	read_and_execute_operations(t_dll *a, t_dll *b)
+{
+	char	*line;
+
+	while (1)
+	{
+		line = get_next_line(STDIN_FILENO);
+		if (line == NULL)
+		{
+			res_is_stack_sorted(a, b);
+			free(line);
+			break ;
+		}
+		extract_newline(line);
+		operation_handler(line, a, b);
+		free(line);
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	int		dynamic_alloc;
@@ -51,32 +70,8 @@ int	main(int argc, char *argv[])
 	}
 	if (!values)
 		ft_error_basic();
-	a = dll_create(values, 'a');
-	if (dynamic_alloc)
-		free_split(values);
-	if (!a)
-		return (ft_error_basic(), EXIT_FAILURE);
-	if (!check_for_errors(a))
-		return (ft_error_basic(), EXIT_FAILURE);
-	b = dll_init('b');
-	if (!b)
-		return (dll_clear(a), free(a), ft_error_basic(), EXIT_FAILURE);
-	while (1)
-	{
-		line = get_next_line(STDIN_FILENO);
-		if (line == NULL)
-		{
-			res_is_stack_sorted(a, b);
-			free(line);
-			break ;
-		}
-		extract_newline(line);
-		operation_handler(line, a, b);
-		free(line);
-	}
-	dll_clear(a);
-	dll_clear(b);
-	free(a);
-	free(b);
-	return (EXIT_SUCCESS);
+	a = create_stack_a(values, dynamic_alloc);
+	b = create_stack_b(a);
+	read_and_execute_operations(a, b);
+	return (free_complete_stacks(a, b), EXIT_SUCCESS);
 }

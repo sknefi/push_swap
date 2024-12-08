@@ -58,4 +58,8 @@ char	**handle_2args(char *str_2args);
 void	free_complete_stacks(t_dll *stack_a, t_dll *stack_b);
 void	free_stack_a(t_dll *stack_a);
 
+// CREATE STACKS (FOR MAIN AND CHECKER)
+t_dll	*create_stack_a(char **values, int dynamic_alloc);
+t_dll	*create_stack_b(t_dll *stack_a);
+
 #endif // LIBRARIES_H

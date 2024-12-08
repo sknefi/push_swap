@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "libraries.h"
 
-static t_dll	*create_stack_a(char **values, int dynamic_alloc)
+t_dll	*create_stack_a(char **values, int dynamic_alloc)
 {
 	t_dll	*stack_a;
 
@@ -15,7 +15,7 @@ static t_dll	*create_stack_a(char **values, int dynamic_alloc)
 	return (stack_a);
 }
 
-static t_dll	*create_stack_b(t_dll *stack_a)
+t_dll	*create_stack_b(t_dll *stack_a)
 {
 	t_dll	*stack_b;
 
