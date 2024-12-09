@@ -1,7 +1,7 @@
 NAME		=	push_swap
 CHECKER		=	checker
 
-SRCS		=	./src/main.c \
+SRCS		=	./src/push_swap.c \
 				./src/operations/operation_utils.c \
 				./src/operations/swap.c \
 				./src/operations/push.c \
