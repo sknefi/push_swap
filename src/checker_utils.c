@@ -8,3 +8,4 @@ void	extract_newline(char *line)
 	if (len > 0 && line[len - 1] == '\n')
 		line[len - 1] = '\0';
 }
+
