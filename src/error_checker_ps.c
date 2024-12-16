@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_checker_ps.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fkarika <fkarika@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/16 16:04:05 by fkarika           #+#    #+#             */
+/*   Updated: 2024/12/16 16:05:14 by fkarika          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libraries.h"
 
 /**
@@ -31,7 +43,7 @@ void	*check_for_separators_only(char *str_2args)
 	size_t	len_str;
 
 	if (!str_2args)
-		ft_error_basic(); // either this or return NULL and end the program
+		ft_error_basic();
 	len_str = ft_strlen(str_2args);
 	if (len_str == 0)
 		ft_error_basic();

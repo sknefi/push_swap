@@ -54,10 +54,10 @@ $(DLL_LIB):
 			make -C $(DLL_DIR)
 
 $(NAME):	$(OBJS)
-			$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft $(DLL_LIB) -o $(NAME)
+			$(CC) $(CFLAGS)     $(OBJS)   $(DLL_LIB) $(LIBFT_DIR)/$(LIBFT_NAME) -o $(NAME)
 
 $(CHECKER):	$(CHECKER_OBJS)
-			$(CC) $(CFLAGS) $(CHECKER_OBJS) -L$(LIBFT_DIR) -lft $(DLL_LIB) -o $(CHECKER)
+			$(CC) $(CFLAGS) $(CHECKER_OBJS) $(DLL_LIB) $(LIBFT_DIR)/$(LIBFT_NAME)  -o $(CHECKER)
 
 clean:
 			$(RM) $(OBJS) $(CHECKER_OBJS)
